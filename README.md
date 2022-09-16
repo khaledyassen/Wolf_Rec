@@ -22,13 +22,13 @@ Add the scope of target in scope.txt file whatever the number of domains and lea
 
 1] Gathering all subdomains from a lot of tools with only one press  
 
-2] Scanning for subdomain takeover  
+2] Do subdomain brute forcing for small list You can add to it your own list 
 
-3] Extract alive domains  
+3] Scanning for subdomain takeover  
 
-4] Screen shots for the live domains  
+4] Extract alive domains  
 
-5] Vulnerability scanner using nuclei  
+5] Screen shots for the live domains
 
-6] All of that will exists in same directory  
+6] Vulnerability scanner using nuclei 
 
