@@ -4,17 +4,16 @@ It is a very simple bash script using to make your life easy when doing reconnai
 
 # Tools needed to install to can start [easy to install them]
 
-1] sublist3r  
-2] subfinder  
-3] assetfinder  
-4] subover  
-5] github-subdomains  
-6] findomain  
-7] amass  
-8] Gobuster  
-9] nuclei  
-10] aquatone  
-11] anew  
+1] [sublist3r](https://github.com/aboul3la/Sublist3r)  
+2] [subfinder](https://github.com/projectdiscovery/subfinder)    
+4] [subover](https://github.com/Ice3man543/SubOver)  
+5] [github-subdomains](https://github.com/gwen001/github-search)  
+6] [findomain](https://github.com/Findomain/Findomain)  
+7] [amass](https://github.com/OWASP/Amass)  
+8] [Gobuster](https://github.com/OJ/gobuster)  
+9] [nuclei](https://github.com/projectdiscovery/nuclei)  
+10] [aquatone](https://github.com/michenriksen/aquatone)  
+11] [anew](https://github.com/tomnomnom/anew)  
 
 # Usage
 
