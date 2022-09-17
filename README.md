@@ -31,3 +31,5 @@ Add the scope of target in scope.txt file whatever the number of domains and lea
 
 6] Vulnerability scanner using nuclei 
 
+7] Nmap scanner
+
