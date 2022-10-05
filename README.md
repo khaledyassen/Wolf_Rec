@@ -21,7 +21,7 @@ Add the scope of target in scope.txt file whatever the number of domains and lea
 
 1] Gathering all subdomains from a lot of tools with only one press  
 
-2] Do subdomain brute forcing for small list You can add to it your own list 
+2] subdomain brute forcing for small list You can add to it your own list 
 
 3] Scanning for subdomain takeover  
 
