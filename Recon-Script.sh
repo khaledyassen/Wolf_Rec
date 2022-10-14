@@ -31,10 +31,6 @@ do
    amass enum -passive -d $domain | anew subdomains.txt;
    printf "\n";
    echo "#### Amass is Ended ✅️✅️";
-   echo "--------------------------------------------> Gobuster for subdomain bruteforcing 🔥️🌚️🔥️... 😍️💝️💝️🥰️:) <----------------------------------";
-   gobuster dns -d $domain -w commonsubdomains.txt -i;
-   printf "\n";
-   echo "#### gobuster is Ended ✅️✅️";
    printf "\n";
    printf "\n";
 done;
