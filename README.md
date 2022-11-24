@@ -14,19 +14,19 @@
 
 # Usage
 
-1] Gathering all subdomains from a lot of tools with only one press  
+#### 1] Gathering all subdomains from a lot of tools with only one press  
 
-2] subdomain brute forcing for small list You can add to it your own list 
+#### 2] subdomain brute forcing for small list You can add to it your own list 
 
-3] Scanning for subdomain takeover  
+#### 3] Scanning for subdomain takeover  
 
-4] Extract alive domains  
+#### 4] Extract alive domains  
 
-5] Gathering Endpoints using gau and a katana for crawling
+#### 5] Gathering Endpoints using gau and a katana for crawling
 
-6] Nmap scanner 
+#### 6] Nmap scanner 
 
-7] Vulnerability scanner using nuclei for all things have been gathered
+#### 7] Vulnerability scanner using nuclei for all things have been gathered
 
 # How to use it
 
