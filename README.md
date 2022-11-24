@@ -24,7 +24,7 @@
 
 #### 5] Gathering Endpoints using gau and a katana for crawling
 
-#### 6] Nmap scanner 
+#### 6] Port scaninng using Nmap scanner
 
 #### 7] Vulnerability scanner using nuclei for all things have been gathered
 
