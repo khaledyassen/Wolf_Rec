@@ -6,7 +6,7 @@ It is a tool written in bash using to make your life easy when doing reconnaissa
 
 ## Requirements 
 
-#### Need go language in your machine Then
+#### Require go language in your machine Then
 
 ```
 ./install.sh
