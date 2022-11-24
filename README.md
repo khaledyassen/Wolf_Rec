@@ -1,18 +1,16 @@
-# Recon-bash-Script
+# The_Wolf
 
-It is a very simple bash script using to make your life easy when doing reconnaissance
+It is a tool written in bash using to make your life easy when doing reconnaissance, Nmap, gathering endpoints and nuclei  
 
-# Tools needed to install to can start [easy to install them]
+# install
 
-1] [sublist3r](https://github.com/aboul3la/Sublist3r)  
-2] [subfinder](https://github.com/projectdiscovery/subfinder)    
-4] [subover](https://github.com/Ice3man543/SubOver)  
-5] [github-subdomains](https://github.com/gwen001/github-search)  
-6] [findomain](https://github.com/Findomain/Findomain)  
-7] [amass](https://github.com/OWASP/Amass)  
-8] [nuclei](https://github.com/projectdiscovery/nuclei)  
-9] [aquatone](https://github.com/michenriksen/aquatone)  
-10] [anew](https://github.com/tomnomnom/anew)  
+## Requirements 
+
+Need go language in your machine Then
+
+```
+./install.sh
+```
 
 # Usage
 
@@ -26,9 +24,9 @@ Add the scope of target in scope.txt file whatever the number of domains and lea
 
 4] Extract alive domains  
 
-5] Screen shots for the live domains
+5] Gathering Endpoints using gau and katana for crawling
 
-6] Vulnerability scanner using nuclei 
+6] Nmap scanner 
 
-7] Nmap scanner
+7] Vulnerability scanner using nuclei for all thing have been gathered
 
