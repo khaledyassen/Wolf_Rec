@@ -15,11 +15,6 @@ do
    printf "\n";
    echo "     #### Assetfinder is Ended ✅️✅️";
    printf "\n";
-   echo "----------------------------------------------> Findomain is loading 🌚️🌚️... [Nice] 😇️😇️😇️:) ";
-   findomain -t $domain | anew subdomains.txt;
-   printf "\n";
-   echo "     #### Findomain is Ended ✅️✅️";
-   printf "\n";
    echo "----------------------------------------------> Subfinder is loading 🌚️🌚️... [very good] 🥰️😘️🥰️:) ";
    subfinder -d $domain | anew subdomains.txt;
    printf "\n";
