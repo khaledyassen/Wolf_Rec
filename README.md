@@ -1,8 +1,8 @@
-# The_Wolf
+# 🐺️🐺️ The_Wolf 🐺️🐺️
 
 ### It is a tool written in bash using to make your life easy when doing reconnaissance, Nmap, gathering endpoints and nuclei  
 
-# install
+# 💿️ Installation 💿️ 
 
 ## Requirements 
 
@@ -13,8 +13,6 @@
 ```
 
 # Usage
-
-Add the scope of target in scope.txt file whatever the number of domains and leave script do the reconnaissance with Great style    
 
 1] Gathering all subdomains from a lot of tools with only one press  
 
