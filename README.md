@@ -1,4 +1,4 @@
-# 🦊️🐺️ The_Wolf 🦊️🐺️
+# 🐺️🐺️ The_Wolf 🐺️🐺️
 
 ### It is a tool written in bash using to make your life easy when doing reconnaissance, Nmap, gathering endpoints and nuclei  
 
@@ -12,7 +12,7 @@
 ./install.sh
 ```
 
-# Usage 🦊️💣️❤️‍🔥️🐺️
+# Usage 🐺️💣️❤️‍🔥️🐺️
 
 #### 1] Gathering all subdomains from a lot of tools with only one press  
 
