@@ -6,7 +6,7 @@ It is a tool written in bash using to make your life easy when doing reconnaissa
 
 ## Requirements 
 
-####Need go language in your machine Then
+#### Need go language in your machine Then
 
 ```
 ./install.sh
@@ -32,7 +32,7 @@ Add the scope of target in scope.txt file whatever the number of domains and lea
 
 # How to use it
 
-####In your directory put your scope.txt file that have your target domains then 
+#### In your directory put your scope.txt file that have your target domains then 
 
 ```
 ./The_Wolf.sh
