@@ -8,3 +8,4 @@ go install github.com/projectdiscovery/katana/cmd/katana@latest
 go install -v github.com/lukasikic/subzy@latest
 go install -v github.com/tomnomnom/anew@latest
 pip3 install uro
+sudo apt install sublist3r
