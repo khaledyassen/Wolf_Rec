@@ -9,6 +9,9 @@
 #### Require go language in your machine Then
 
 ```
+git clone https://github.com/khaledyassen/The_Wolf.git
+cd The_Wolf
+sudo chmod +x install.sh
 ./install.sh
 ```
 
