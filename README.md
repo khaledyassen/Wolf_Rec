@@ -22,11 +22,11 @@
 
 4] Extract alive domains  
 
-5] Gathering Endpoints using gau and katana for crawling
+5] Gathering Endpoints using gau and a katana for crawling
 
 6] Nmap scanner 
 
-7] Vulnerability scanner using nuclei for all thing have been gathered
+7] Vulnerability scanner using nuclei for all things have been gathered
 
 # How to use it
 
