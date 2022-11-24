@@ -12,7 +12,7 @@
 ./install.sh
 ```
 
-# Usage
+# Usage 🐺️💣️❤️‍🔥️🐺️
 
 #### 1] Gathering all subdomains from a lot of tools with only one press  
 
