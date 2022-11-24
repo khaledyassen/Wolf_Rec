@@ -32,7 +32,7 @@ Add the scope of target in scope.txt file whatever the number of domains and lea
 
 # How to use it
 
-#### In your directory put your scope.txt file that have your target domains then 
+#### In your directory Add the scope of target in scope.txt file whatever the number of domains and leave script do the reset 😎️🥰️
 
 ```
 ./The_Wolf.sh
