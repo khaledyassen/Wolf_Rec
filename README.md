@@ -30,7 +30,7 @@
 
 # How to use it
 
-#### In your directory Add the scope of target in scope.txt file whatever the number of domains and leave the script do the reset 🐺️😎️🥰️🐺️
+#### Add the domains of your target in `scope.txt` file whatever the number of domains and leave the script do the reset 🐺️😎️🥰️🐺️
 
 ```
 ./The_Wolf.sh
