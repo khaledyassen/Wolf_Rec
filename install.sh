@@ -8,4 +8,4 @@ go install github.com/projectdiscovery/katana/cmd/katana@latest
 go install -v github.com/lukasikic/subzy@latest
 go install -v github.com/tomnomnom/anew@latest
 pip3 install uro
-sudo apt install -y sublist3r && sudo apt install -y figlet && sudo apt install -y lolcat
+sudo apt install -y sublist3r figlet lolcat
