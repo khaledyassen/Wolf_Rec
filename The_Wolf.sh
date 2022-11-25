@@ -30,7 +30,7 @@ do
    printf "\n";
 done;
    echo "-------------------------------------------------------> Start httpx 🙈️🙈️🔥️🔥️[live subdomains] and screenshots ";
-   httpx-toolkit --status-code -list subdomains.txt -o httpx.txt;
+   httpx --status-code -list subdomains.txt -o httpx.txt;
    printf "\n";
    echo "-------------------------------------------------------> Start Flutteration 🌔️🌔️🔥️ ";
    printf "\n";
