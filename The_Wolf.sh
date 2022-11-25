@@ -48,7 +48,7 @@ done;
    echo "-------------------------------------------------------> Using Nmap scanner for scanning open ports 🔍️🔍️🔍️ ";
    printf "\n";
    cat ALLWithout404.txt | unfurl domains | anew Domains.txt;
-   nmap --open -iL Domains.txt -sC -Pn -A -T4 -oA NmapScanerResutl.txt;
+   nmap --open -iL Domains.txt -sC -Pn -A -T3 -oA NmapScanerResutl.txt;
    printf "\n";
    echo "     #### Nmap scanner is ended ✅️✅️✅️✅️";
    printf "\n";
