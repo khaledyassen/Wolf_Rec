@@ -9,3 +9,6 @@ go install -v github.com/lukasikic/subzy@latest
 go install -v github.com/tomnomnom/anew@latest
 pip3 install uro
 sudo apt install -y sublist3r figlet lolcat
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$HOME/.local/bin:$PATH
