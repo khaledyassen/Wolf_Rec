@@ -11,7 +11,7 @@ do
    echo "     #### Sublist3r is Ended ✅️✅️";
    printf "\n";
    echo "----------------------------------------------> Assetfinder is loading 🌚️🌚️... [normal] 😬️😬️😬️:) ";
-   assetfinder $doamin -subs-only | anew subdomains.txt;
+   assetfinder $domain -subs-only | anew subdomains.txt;
    printf "\n";
    echo "     #### Assetfinder is Ended ✅️✅️";
    printf "\n";
