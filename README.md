@@ -1,6 +1,6 @@
 # 🐺️🐺️ The_Wolf 🐺️🐺️
 
-### It is a tool written in bash using to make your life easy when doing reconnaissance, Nmap, gathering endpoints and nuclei  
+### It is a tool written in bash and used for subdomain enumeration, Nmap scanning, gathering endpoints, and nuclei scanner
 
 # 💿️ Installation 💿️ 
 
