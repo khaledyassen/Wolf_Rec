@@ -9,3 +9,5 @@ go install -v github.com/lukasikic/subzy@latest
 go install -v github.com/tomnomnom/anew@latest
 pip3 install uro
 sudo apt install -y sublist3r figlet lolcat
+git clone https://github.com/initstring/cloud_enum.git && cd cloud_enum
+pip3 install -r requirements.txt
