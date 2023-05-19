@@ -8,6 +8,6 @@ go install github.com/projectdiscovery/katana/cmd/katana@latest
 go install -v github.com/lukasikic/subzy@latest
 go install -v github.com/tomnomnom/anew@latest
 pip3 install uro
-sudo apt install -y sublist3r figlet lolcat
+sudo apt install -y sublist3r figlet lolcat zaproxy
 git clone https://github.com/initstring/cloud_enum.git
 pip3 install -r cloud_enum/requirements.txt
