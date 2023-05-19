@@ -11,7 +11,7 @@
 ```
 git clone https://github.com/khaledyassen/The_Wolf.git
 cd The_Wolf
-sudo chmod +x install.sh
+sudo chmod +x install.sh ZapScan.sh
 ./install.sh
 ```
 
