@@ -29,7 +29,7 @@ sudo chmod +x install.sh
 
 #### 6] Port scanning using Nmap scanner
 
-#### 7] Vulnerability scanner using nuclei for all things have been gathered
+#### 7] Vulnerability scanner using nuclei and Zaproxy.
 
 # How to use it
 
