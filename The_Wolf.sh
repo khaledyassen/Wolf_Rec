@@ -21,7 +21,7 @@ do
    echo "     #### Subfinder is Ended ✅️✅️";
    printf "\n";
    echo "----------------------------------------------> Amass is my favourite tool is loading 🌚️🔥️... [Great] 😍️💝️💝️🥰️:) ";
-   amass enum -passive -d $domain | anew subdomains.txt;
+   amass enum -config amassAPI_config.ini -passive -d $domain | anew subdomains.txt;
    printf "\n";
    echo "     #### Amass is Ended ✅️✅️";
    echo "----------------------------------------------> Add your list to the file for more subdomains 💝️🥰️🌚️ [optional]:) ";
