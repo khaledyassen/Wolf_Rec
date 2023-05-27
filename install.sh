@@ -72,14 +72,6 @@ else
     echo "anew is already installed."
 fi
 
-# Check if uro is installed, and install if not
-if ! command -v uro &>/dev/null; then
-    echo "uro is not installed. Installing..."
-    pip3 install uro
-else
-    echo "uro is already installed."
-fi
-
 # Check if gf is installed, and install if not
 if ! command -v gf &>/dev/null; then
     echo "gf is not installed. Installing..."
@@ -106,6 +98,15 @@ fi
     
 # Check if zaproxy, lolcat, figlet, sublist3r, commix, and sqlmap is installed, and install if not
 sudo apt install -y sublist3r zaproxy sqlmap figlet lolcat commix
+
+# Check if uro is installed, and install if not
+if ! command -v uro &>/dev/null; then
+    echo "uro is not installed. Installing..."
+    https://github.com/s0md3v/uro.git
+    pip3 install uro/uro
+else
+    echo "uro is already installed."
+fi
 
 # Check if tplmap is installed, and install if not
 git clone https://github.com/epinna/tplmap.git
