@@ -86,6 +86,7 @@ if ! command -v gf &>/dev/null; then
     go install -v github.com/tomnomnom/gf@latest
 else
     echo "gf is already installed."
+fi
 
 # Check if dalfox is installed, and install if not
 if ! command -v dalfox &>/dev/null; then
@@ -93,6 +94,7 @@ if ! command -v dalfox &>/dev/null; then
     go install github.com/hahwul/dalfox/v2@latest
 else
     echo " is already installed."
+fi
 
 # Check if jaeles is installed, and install if not
 if ! command -v jaeles &>/dev/null; then
@@ -100,7 +102,8 @@ if ! command -v jaeles &>/dev/null; then
     GO111MODULE=on go get github.com/jaeles-project/jaeles
 else
     echo " is already installed."
-
+fi
+    
 # Check if zaproxy, lolcat, figlet, sublist3r, commix, and sqlmap is installed, and install if not
 sudo apt install -y sublist3r zaproxy sqlmap figlet lolcat commix
 
