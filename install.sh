@@ -19,7 +19,7 @@ fi
 # Check if gau is installed, and install if not
 if ! command -v gau &>/dev/null; then
     echo "gau is not installed. Installing..."
-    go install github.com/tomnomnom/unfurl@latest
+    go install github.com/lc/gau/v2/cmd/gau@latest
 else
     echo "gau is already installed."
 fi
