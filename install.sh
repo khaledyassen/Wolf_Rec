@@ -109,8 +109,8 @@ sudo apt install -y sublist3r zaproxy sqlmap figlet lolcat commix
 
 # Check if tplmap is installed, and install if not
 git clone https://github.com/epinna/tplmap.git
-pip3 install -r tplmap/requirements.txt
+pip3 install -r tplmap/requirements.txt --break-system-packages
 
 # Check if cloud_enum is installed, and install if not
 git clone https://github.com/initstring/cloud_enum.git
-pip3 install -r cloud_enum/requirements.txt
+pip3 install -r cloud_enum/requirements.txt --break-system-packages
