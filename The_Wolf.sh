@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 figlet "                                       The_Wolf" | lolcat
 printf "\n";
-cat scope.txt | while read domain 
-do
+while read -r domain; do
    echo "-------------------------------------------------------> Start Reconnaissance 🔥️🔥️☠️🔥️ ";
    printf "\n";
    echo "----------------------------------------------> Sublist3r is loading 🌚️🌚️... [good] 🤧️🤧️🤧️:( ";
@@ -29,7 +28,7 @@ do
    sleep 8
    printf "\n";
    printf "\n";
-done;
+done < scope.txt
    echo "-------------------------------------------------------> Start httpx 🙈️🙈️🔥️🔥️[live subdomains] and screenshots ";
    httpx --status-code -list subdomains.txt -p 80,443,8443,8000,5000,8080-o httpx.txt;
    sleep 8
