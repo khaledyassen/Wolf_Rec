@@ -25,13 +25,13 @@ while read -r domain; do
    echo "     #### Amass is Ended ✅️✅️";
    echo "----------------------------------------------> Add your list to the file for more subdomains 💝️🥰️🌚️ [optional]:) ";
    cat subdomains_list.txt | while read subfuzz; do echo $subfuzz".$domain"; done | anew subdomains.txt;
-   sleep 8
+   sleep 5
    printf "\n";
    printf "\n";
 done < scope.txt
    echo "-------------------------------------------------------> Start httpx 🙈️🙈️🔥️🔥️[live subdomains] and screenshots ";
    httpx --status-code -list subdomains.txt -p 80,443,8443,8000,5000,8080-o httpx.txt;
-   sleep 8
+   sleep 5
    printf "\n";
    echo "-------------------------------------------------------> Start Flutteration 🌔️🌔️🔥️ ";
    printf "\n";
@@ -52,7 +52,7 @@ done < scope.txt
    nmap --open -iL Domains.txt -sC -Pn -A -T3 -oA NmapScanerResutl.txt;
    printf "\n";
    echo "     #### Nmap scanner is ended ✅️✅️✅️✅️";
-   sleep 8
+   sleep 5
    printf "\n";
    echo "-------------------------------------------------------> Scan for buckets using cloud_enum 💝️:(";
    cat scope.txt >> buckets.txt;
@@ -66,14 +66,14 @@ done < scope.txt
    printf "\n";
    echo "-------------------------------------------------------> Gau is comming 🔗️🔥️ ";
    cat Domains.txt | gau --blacklist png,jpg,gif,css,ttf,woff,svg --threads 2 | /usr/local/bin/uro | anew Endpoints.txt;
-   sleep 10
+   sleep 6
    echo "-------------------------------------------------------> Let's crawling using katana 🔗️🔥️ ";
    cat ALLWithout404.txt | katana -d 3 -jc -delay 10 | /usr/local/bin/uro | anew Katana.txt;
-   sleep 10
+   sleep 6
    echo "-------------------------------------------------------> Let's Get the live of them for nuclei 🔥️ ";
    cat Endpoints.txt | httpx-toolkit --status-code -mc 200,403,401,400,301 -o LiveEndpoints.txt;
    cat Katana.txt | anew LiveEndpoints.txt;
-   sleep 8
+   sleep 5
    echo "-------------------------------------------------------> 🔥️☠️😎️ jaeles scanner for all [Add Nuclei templetes to it] ❤️‍🔥️❤️‍🔥️🔥️ ";
    printf "\n";
    cat httpx.txt | cut -d " " -f1 | anew jaeles.txt;
@@ -81,7 +81,7 @@ done < scope.txt
    jaeles scan -c 80 -U jaeles.txt -o output2;
    printf "\n";
    echo "     #### jaeles scanner is ended ✅️✅️✅️✅️";
-   sleep 10
+   sleep 6
    printf "\n";
    echo "-------------------------------------------------------> 🔥️☠️😎️ Nuclei scanner for all [fire tmux and leave them in your VPS] ❤️‍🔥️❤️‍🔥️🔥️ ";
    printf "\n";
