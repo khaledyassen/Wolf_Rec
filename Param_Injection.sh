@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # Filter Endpoints based on gf 
-cat Endpoints.txt | gf xss | grep -v "https://wwww." | grep -v "http://wwww." | anew XSS.txt;
-cat Endpoints.txt | gf lfi | grep -v "https://wwww." | grep -v "http://wwww." | anew LFI.txt;
-cat Endpoints.txt | gf ssrf | grep -v "https://wwww." | grep -v "http://wwww." | anew SSRF.txt;
-cat Endpoints.txt | gf ssti | grep -v "https://wwww." | grep -v "http://wwww." | anew SSTI.txt;
-cat Endpoints.txt | gf rce | grep -v "https://wwww." | grep -v "http://wwww." | anew OS_Commands.txt;
-cat Endpoints.txt | gf sqli | grep -v "https://wwww." | grep -v "http://wwww." | anew SQL.txt;
+cat Endpoints.txt | gf xss | anew XSS.txt;
+cat Endpoints.txt | gf lfi | anew LFI.txt;
+cat Endpoints.txt | gf ssrf | anew SSRF.txt;
+cat Endpoints.txt | gf ssti | anew SSTI.txt;
+cat Endpoints.txt | gf rce | anew OS_Commands.txt;
+cat Endpoints.txt | gf sqli | anew SQL.txt;
 
 # XSS automation
 dalfox file XSS.txt -o XSS_Inject_Response.txt;
