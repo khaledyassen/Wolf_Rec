@@ -12,6 +12,7 @@ fi
 if ! command -v httpx &>/dev/null; then
     echo "httpx is not installed. Installing..."
     go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
+    go install github.com/hakluke/hakcheckurl@latest
 else
     echo "httpx is already installed."
 fi
