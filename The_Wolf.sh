@@ -66,7 +66,7 @@ done < scope.txt
     python3 ParamSpider/paramspider.py -d "$Line" -o "$Line".txt
    done < Domains.txt
    cat output/*.txt | anew parameters.txt;
-   cat parameters.txt | anew Endpoints.txt
+   cat parameters.txt | anew Endpoints.txt;
    echo "     #### param spider is ended ✅️✅️✅️✅️";
    sleep 5
    printf "\n";
