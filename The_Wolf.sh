@@ -49,7 +49,7 @@ done < scope.txt
    echo "-------------------------------------------------------> Using Nmap scanner for scanning open ports 🔍️🔍️🔍️ ";
    printf "\n";
    cat httpx.txt | cut -d " " -f1 | unfurl domains | anew Domains.txt;
-   nmap --open -iL Domains.txt -sC -Pn -A -T3 -oA NmapScanerResutl.txt;
+   nmap --open -iL Domains.txt -Pn -T3 -oA NmapScanerResutl;
    printf "\n";
    echo "     #### Nmap scanner is ended ✅️✅️✅️✅️";
    sleep 5
@@ -59,6 +59,15 @@ done < scope.txt
    cat Domains.txt | anew buckets.txt;
    python3 cloud_enum/cloud_enum.py -kf buckets.txt -qs >> Cloud_Result.txt;
    echo "     #### cloud enum scanner is ended ✅️✅️✅️✅️";
+   sleep 5
+   printf "\n";
+   echo "-------------------------------------------------------> param spider 🔗️💝️:(";
+   while read Line; do
+    python3 ParamSpider/paramspider.py -d "$Line" -o "$Line".txt
+   done < Domains.txt
+   cat output/*.txt | anew parameters.txt;
+   cat parameters.txt | anew Endpoints.txt
+   echo "     #### param spider is ended ✅️✅️✅️✅️";
    sleep 5
    printf "\n";
    echo "-------------------------------------------------------> Gathering endpoints using gau and katana 🔗️🔗️🔥️🔗️ ";
@@ -74,7 +83,7 @@ done < scope.txt
    cat Endpoints.txt | httpx-toolkit --status-code -mc 200,403,401,400,301 -o LiveEndpoints.txt;
    cat Katana.txt | anew LiveEndpoints.txt;
    sleep 5
-   echo "-------------------------------------------------------> 🔥️☠️😎️ jaeles scanner for all [Add Nuclei templetes to it] ❤️‍🔥️❤️‍🔥️🔥️ ";
+   echo "-------------------------------------------------------> 🔥️☠️😎️ jaeles scanner for all  ❤️‍🔥️❤️‍🔥️🔥️ ";
    printf "\n";
    cat httpx.txt | cut -d " " -f1 | anew jaeles.txt;
    cat LiveEndpoints.txt | /usr/local/bin/uro | cut -d " " -f1 | anew jaeles.txt;
@@ -83,7 +92,7 @@ done < scope.txt
    echo "     #### jaeles scanner is ended ✅️✅️✅️✅️";
    sleep 6
    printf "\n";
-   echo "-------------------------------------------------------> 🔥️☠️😎️ Nuclei scanner for all [fire tmux and leave them in your VPS] ❤️‍🔥️❤️‍🔥️🔥️ ";
+   echo "-------------------------------------------------------> 🔥️☠️😎️ Nuclei scanner for all ❤️‍🔥️❤️‍🔥️🔥️ ";
    printf "\n";
    cat httpx.txt | cut -d " " -f1 | anew nuclei.txt;
    cat LiveEndpoints.txt | /usr/local/bin/uro | cut -d " " -f1 | anew nuclei.txt;
