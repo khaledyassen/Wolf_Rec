@@ -80,7 +80,7 @@ done < scope.txt
    cat ALLWithout404.txt | katana -d 3 -jc -delay 10 | /usr/local/bin/uro | anew Katana.txt;
    sleep 6
    echo "-------------------------------------------------------> Let's Get the live of them for nuclei 🔥️ ";
-   cat Endpoints.txt | httpx-toolkit --status-code -mc 200,403,401,400,301 -o LiveEndpoints.txt;
+   cat Endpoints.txt | hakcheckurl | anew LiveEndpoints.txt;
    cat Katana.txt | anew LiveEndpoints.txt;
    sleep 5
    echo "-------------------------------------------------------> 🔥️☠️😎️ jaeles scanner for all  ❤️‍🔥️❤️‍🔥️🔥️ ";
