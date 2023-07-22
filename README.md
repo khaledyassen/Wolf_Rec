@@ -31,7 +31,7 @@ sudo chmod +x install.sh ZapScan.sh
 
 #### 7] Vulnerability scanner using nuclei and Zaproxy.
 
-#### 8] LFI, SQLI, XSS, SSRF, SSTI, and command injection using the parma_Injection.sh file  
+#### 8] LFI, SQLI, XSS, SSRF, SSTI, and command injection using the `parma_Injection.sh` file  
 
 # How to use it
 
