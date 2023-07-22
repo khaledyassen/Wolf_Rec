@@ -6,7 +6,7 @@
 
 ## Requirements 
 
-#### Require go language in your machine Then
+#### Require the `go` language in your machine Then
 
 ```
 git clone https://github.com/khaledyassen/The_Wolf.git
@@ -23,19 +23,23 @@ sudo chmod +x install.sh ZapScan.sh
 
 #### 3] Scanning for subdomain takeover  
 
-#### 4] Extract alive domains  
+#### 4] Enumerate public resources in AWS, Azure, and Google Cloud using cloud_enum.
 
-#### 5] Gathering Endpoints using gau and a katana for crawling
+#### 5] Extract alive domains  
 
-#### 6] Port scanning using Nmap scanner
+#### 6] Gathering Endpoints using gau and a katana for crawling
 
-#### 7] Vulnerability scanner using nuclei and Zaproxy.
+#### 7] Gathering hidden parameters using param spider. 
 
-#### 8] LFI, SQLI, XSS, SSRF, SSTI, and command injection using the `parma_Injection.sh` file  
+#### 8] Port scanning using Nmap scanner
+
+#### 9] Vulnerability scanner using nuclei and Zaproxy.
+
+#### 10] LFI, SQLI, XSS, SSRF, SSTI, and command injection using the `parma_Injection.sh` file  
 
 # How to use it
 
-#### Add the domains of your target in `scope.txt` file whatever the number of domains and leave the script do the reset 🐺️😎️🥰️🐺️
+#### Add the domains of your target in `scope.txt` file whatever the number of domains and leave the script to do the reset 🐺️😎️🥰️🐺️
 
 ```
 ./The_Wolf.sh
