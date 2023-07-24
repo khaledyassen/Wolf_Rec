@@ -122,3 +122,8 @@ pip3 install -r cloud_enum/requirements.txt --break-system-packages
 # check if commix is insralled and install if not
 git clone https://github.com/commixproject/commix.git
 python3 commix/setup.py install
+
+# check if parmspider is installed and install if not
+
+git clone https://github.com/devanshbatham/ParamSpider
+pip3 install -r ParamSpider/requirements.txt
