@@ -104,7 +104,9 @@ sudo apt install -y ffuf sublist3r zaproxy sqlmap figlet lolcat commix
 if ! command -v uro &>/dev/null; then
     echo "uro is not installed. Installing..."
     git clone https://github.com/s0md3v/uro.git
-    pip3 install uro/uro
+    cd uro
+    pip3 install uro
+    cd ../
 else
     echo "uro is already installed."
 fi
