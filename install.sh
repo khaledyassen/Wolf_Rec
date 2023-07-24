@@ -92,7 +92,7 @@ fi
 # Check if jaeles is installed, and install if not
 if ! command -v jaeles &>/dev/null; then
     echo " is not installed. Installing..."
-    GO111MODULE=on go get github.com/jaeles-project/jaeles
+    go install github.com/jaeles-project/jaeles@latest     
 else
     echo " is already installed."
 fi
