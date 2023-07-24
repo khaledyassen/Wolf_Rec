@@ -97,8 +97,8 @@ else
     echo " is already installed."
 fi
     
-# Check if zaproxy, lolcat, figlet, sublist3r, commix, and sqlmap is installed, and install if not
-sudo apt install -y sublist3r zaproxy sqlmap figlet lolcat commix
+# Check if ffuf, zaproxy, lolcat, figlet, sublist3r, commix, and sqlmap is installed, and install if not
+sudo apt install -y ffuf sublist3r zaproxy sqlmap figlet lolcat commix
 
 # Check if uro is installed, and install if not
 if ! command -v uro &>/dev/null; then
