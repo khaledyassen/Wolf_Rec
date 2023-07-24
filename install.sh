@@ -103,7 +103,7 @@ sudo apt install -y sublist3r zaproxy sqlmap figlet lolcat commix
 # Check if uro is installed, and install if not
 if ! command -v uro &>/dev/null; then
     echo "uro is not installed. Installing..."
-    https://github.com/s0md3v/uro.git
+    git clone https://github.com/s0md3v/uro.git
     pip3 install uro/uro
 else
     echo "uro is already installed."
@@ -116,3 +116,7 @@ pip3 install -r tplmap/requirements.txt --break-system-packages
 # Check if cloud_enum is installed, and install if not
 git clone https://github.com/initstring/cloud_enum.git
 pip3 install -r cloud_enum/requirements.txt --break-system-packages
+
+# check if commix is insralled and install if not
+git clone https://github.com/commixproject/commix.git
+python3 commix/setup.py install
