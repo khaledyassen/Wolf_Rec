@@ -96,7 +96,15 @@ if ! command -v jaeles &>/dev/null; then
 else
     echo " is already installed."
 fi
-    
+
+# Check if crlfuzz is installed, and install if not
+if ! command -v crlfuzz &>/dev/null; then
+    echo " is not installed. Installing..."
+    go install github.com/dwisiswant0/crlfuzz/cmd/crlfuzz@latest     
+else
+    echo " is already installed."
+fi
+
 # Check if ffuf, zaproxy, lolcat, figlet, sublist3r, commix, and sqlmap is installed, and install if not
 sudo apt install -y ffuf sublist3r zaproxy sqlmap figlet lolcat commix
 
