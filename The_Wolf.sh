@@ -49,7 +49,7 @@ done < scope.txt
    echo "-------------------------------------------------------> Using Nmap scanner for scanning open ports 🔍️🔍️🔍️ ";
    printf "\n";
    cat httpx.txt | cut -d " " -f1 | unfurl domains | anew Domains.txt;
-   nmap --open -iL Domains.txt -Pn -T3 -oA NmapScanerResutl;
+   nmap --open -iL Domains.txt -sS -Pn -T3 -oA NmapScanerResutl;
    printf "\n";
    echo "     #### Nmap scanner is ended ✅️✅️✅️✅️";
    sleep 5
