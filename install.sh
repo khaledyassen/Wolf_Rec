@@ -105,6 +105,14 @@ else
     echo " is already installed."
 fi
 
+# Check if headi is installed, and install if not
+if ! command -v headi &>/dev/null; then
+    echo " is not installed. Installing..."
+    go install github.com/mlcsec/headi@latest
+else
+    echo " is already installed."
+fi
+
 # Check if ffuf, zaproxy, lolcat, figlet, sublist3r, commix, and sqlmap is installed, and install if not
 sudo apt install -y ffuf sublist3r zaproxy sqlmap figlet lolcat commix
 
@@ -135,3 +143,14 @@ python3 commix/setup.py install
 
 git clone https://github.com/devanshbatham/ParamSpider
 pip3 install -r ParamSpider/requirements.txt
+
+# check if the liffy is installed
+git clone http://github.com/mzfr/liffy
+pip3 install -r liffy/requirements.txt
+
+# Check if smuggler is installed
+git clone https://github.com/defparam/smuggler.git
+
+# Check if Oralyzer is installed
+git clone https://github.com/r0075h3ll/Oralyzer.git
+pip3 install -r Oralyzer/requirements.txt
