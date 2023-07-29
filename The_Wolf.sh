@@ -42,7 +42,7 @@ done < scope.txt
    echo "-------------------------------------------------------> Scan for subdomainTakeover using subzy 💝️💝️:(";
    printf "\n";
    cat httpx.txt | grep "404" | cut -d " " -f1 | anew 404.txt;
-   subzy run -targets 404.txt | anew takeover.txt;
+   subzy run --targets 404.txt | anew takeover.txt;
    printf "\n";
    echo "     #### Httpx and subdomain TakeOver is Ended ✅️✅️✅️✅️";
    printf "\n";
