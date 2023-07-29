@@ -60,7 +60,7 @@ fi
 # Check if subzy is installed, and install if not
 if ! command -v subzy &>/dev/null; then
     echo "subzy is not installed. Installing..."
-    go install -v github.com/lukasikic/subzy@latest
+    go install -v github.com/LukaSikic/subzy@latest
 else
     echo "subzy is already installed."
 fi
