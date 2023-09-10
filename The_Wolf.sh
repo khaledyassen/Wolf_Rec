@@ -4,32 +4,32 @@ printf "\n";
 while read -r domain; do
    echo "-------------------------------------------------------> Start Reconnaissance 🔥️🔥️☠️🔥️ ";
    printf "\n";
-   echo "----------------------------------------------> Sublist3r is loading 🌚️🌚️... [good] 🤧️🤧️🤧️:( ";
+   echo "----------------------------------------------> Sublist3r is loading 🌚️🌚️... :( ";
    sublist3r -d $domain | anew subdomains.txt;
    printf "\n";
    echo "     #### Sublist3r is Ended ✅️✅️";
    printf "\n";
-   echo "----------------------------------------------> Assetfinder is loading 🌚️🌚️... [normal] 😬️😬️😬️:) ";
+   echo "----------------------------------------------> Assetfinder is loading 🌚️🌚️... :) ";
    assetfinder $domain -subs-only | anew subdomains.txt;
    printf "\n";
    echo "     #### Assetfinder is Ended ✅️✅️";
    printf "\n";
-   echo "----------------------------------------------> Subfinder is loading 🌚️🌚️... [very good] 🥰️😘️🥰️:) ";
+   echo "----------------------------------------------> Subfinder is loading 🌚️🌚️...:) ";
    subfinder -d $domain | anew subdomains.txt;
    printf "\n";
    echo "     #### Subfinder is Ended ✅️✅️";
    printf "\n";
-   echo "----------------------------------------------> Amass is my favourite tool is loading 🌚️🔥️... [Great] 😍️💝️💝️🥰️:) ";
+   echo "----------------------------------------------> Amass is my favourite tool is loading 🌚️🔥️...) ";
    amass enum -config amassAPI_config.ini -passive -d $domain | anew subdomains.txt;
    printf "\n";
    echo "     #### Amass is Ended ✅️✅️";
-   echo "----------------------------------------------> Add your list to the file for more subdomains 💝️🥰️🌚️ [optional]:) ";
+   echo "----------------------------------------------> Add your list to the file for more subdomains) ";
    cat subdomains_list.txt | while read subfuzz; do echo $subfuzz".$domain"; done | anew subdomains.txt;
    sleep 5
    printf "\n";
    printf "\n";
 done < scope.txt
-   echo "-------------------------------------------------------> Start httpx 🙈️🙈️🔥️🔥️[live subdomains] and screenshots ";
+   echo "-------------------------------------------------------> Start httpx 🔥️🔥️[live subdomains] and screenshots ";
    httpx --status-code -list subdomains.txt -p 80,443,8443,8000,5000,8080-o httpx.txt;
    sleep 5
    printf "\n";
