@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-figlet "                                       The_Wolf" | lolcat
+jp2a The_Wolf.jpg
 printf "\n";
 while read -r domain; do
    echo "-------------------------------------------------------> Start Reconnaissance 🔥️🔥️☠️🔥️ ";
