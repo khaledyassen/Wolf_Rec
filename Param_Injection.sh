@@ -19,8 +19,8 @@ done
 if [ ${#missing_files[@]} -eq 0 ]; then
     echo "ok"
     # head injection for 403&401
-    cat httpx.txt | grep "403" | anew 403.txt
-    cat httpx.txt | grep "401" | anew 403.txt
+    cat httpx.txt | grep "403" | cut -d " " -f1 | anew 403.txt
+    cat httpx.txt | grep "401" | cut -d " " -f1 | anew 403.txt
     cat 403.txt | while read url; do headi -u $url -p internal_CLoudEnum_IPs.txt | anew 403_Response.txt ; done
     
     # XSS injection
