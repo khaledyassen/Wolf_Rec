@@ -3,7 +3,7 @@
 
 # Define the directory to check and the list of required files
 directory="."
-required_files=("httpx.txt" "XSS.txt" "LFI.txt" "ALLWithout404.txt" "SSRF.txt" "SSTI.txt" "SQL.txt" "OS_Commands.txt")
+required_files=("httpx.txt" "XSS.txt" "LFI.txt" "ALLWithout404.txt" "SSRF.txt" "SSTI.txt" "SQL.txt" "OS_Commands.txt","internal_CLoudEnum_IPs.txt")
 
 # Array to store missing files
 missing_files=()
