@@ -25,7 +25,7 @@ sudo chmod +x install.sh ZapScan.sh
 
 #### 4] Enumerate public resources in AWS, Azure, and Google Cloud using cloud_enum.
 
-#### 5] Extract alive domains  
+#### 5] scanning for open buckets 
 
 #### 6] Gathering Endpoints using gau and a katana for crawling
 
