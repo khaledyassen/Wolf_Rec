@@ -17,6 +17,14 @@ else
     echo "httpx is already installed."
 fi
 
+# Check if S3Scanner is installed, and install if not
+if ! command -v s3scanner &>/dev/null; then
+    echo "S3Scanner is not installed. Installing..."
+    go install -v github.com/sa7mon/s3scanner@latest
+else
+    echo "S3Scanner is already installed."
+fi
+
 # Check if gau is installed, and install if not
 if ! command -v gau &>/dev/null; then
     echo "gau is not installed. Installing..."
