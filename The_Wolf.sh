@@ -54,11 +54,17 @@ done < scope.txt
    echo "     #### Nmap scanner is ended ✅️✅️✅️✅️";
    sleep 5
    printf "\n";
-   echo "-------------------------------------------------------> Scan for buckets using cloud_enum 💝️:(";
+   echo "-------------------------------------------------------> Scan for buckets using cloud_enum and s3scanner💝️:(";
    cat scope.txt >> buckets.txt;
    cat Domains.txt | anew buckets.txt;
    python3 cloud_enum/cloud_enum.py -kf buckets.txt -qs >> Cloud_Result.txt;
    echo "     #### cloud enum scanner is ended ✅️✅️✅️✅️";
+   sleep 5
+   printf "\n";
+   cat subdomains.txt | anew buckets.txt;
+   s3scanner -bucket-file buckets.txt | anew s3scanner_Response.txt;
+   cat s3scanner_Response.txt | | grep -v "not_exist" | grep -v "invalid" | anew Open_Buckets.txt
+   echo "     ####  s3scanner is ended ✅️✅️✅️✅️";
    sleep 5
    printf "\n";
    echo "-------------------------------------------------------> param spider 🔗️💝️:(";
