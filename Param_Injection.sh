@@ -3,7 +3,7 @@
 
 # Define the directory to check and the list of required files
 directory="."
-required_files=("httpx.txt" "XSS.txt" "LFI.txt" "ALLWithout404.txt" "SSRF.txt" "SSTI.txt" "SQL.txt" "OS_Commands.txt","internal_CLoudEnum_IPs.txt")
+required_files=("httpx.txt" "XSS.txt" "LFI.txt" "ALLWithout404.txt" "SSRF.txt" "SSTI.txt" "SQL.txt" "OS_Commands.txt" "internal_CLoudEnum_IPs.txt")
 
 # Array to store missing files
 missing_files=()
@@ -34,7 +34,7 @@ if [ ${#missing_files[@]} -eq 0 ]; then
     # done
     
     cd liffy
-    cat LFI.txt | while read url; do python3 liffy.py $url -d -i -e -f | anew ../LFI_new_Response.txt; done
+    cat ../LFI.txt | while read url; do python3 liffy.py $url -d -i -e -f | anew ../LFI_new_Response.txt; done
     cd ../
     sleep 3
     
@@ -44,7 +44,7 @@ if [ ${#missing_files[@]} -eq 0 ]; then
     
     # Open Redirect
     cd Oralyzer
-    python3 oralyzer.py -l SSRF.txt | anew ../Open_Redirect_Response.txt
+    python3 oralyzer.py -l ../SSRF.txt | anew ../Open_Redirect_Response.txt
     cd ../
     sleep 3
     
@@ -54,13 +54,13 @@ if [ ${#missing_files[@]} -eq 0 ]; then
     
     # SSTI injection
     cd tplmap
-    cat SSTI.txt | while read url; do python3 tplmap.py -u $url | anew ../SSTI_Inject_Response.txt; done
+    cat ../SSTI.txt | while read url; do python3 tplmap.py -u $url | anew ../SSTI_Inject_Response.txt; done
     cd ../
     sleep 3
     
     # Smuggler injection
     cd smuggler
-    cat ALLWithout404.txt | python3 smuggler.py | anew Smuggler_Response.txt
+    cat ../ALLWithout404.txt | python3 smuggler.py | anew Smuggler_Response.txt
     cd ../
     sleep 3
     
@@ -71,7 +71,7 @@ if [ ${#missing_files[@]} -eq 0 ]; then
     
     # OS command injection
     cd commix
-    cat OS_Commands.txt | while read url; do python3 commix.py -u $url --hostname | anew ../Command_Inject_Response.txt; done
+    cat ../OS_Commands.txt | while read url; do python3 commix.py -u $url --hostname | anew ../Command_Inject_Response.txt; done
     cd ../
 else
     echo "Missing files:"
