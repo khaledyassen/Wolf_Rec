@@ -41,6 +41,16 @@ else
     echo "unfurl is already installed."
 fi
 
+
+# Check if qsreplace is installed, and install if not
+if ! command -v qsreplace &>/dev/null; then
+    echo "qsreplace is not installed. Installing..."
+    go install github.com/tomnomnom/qsreplace@latest
+else
+    echo "qsreplace is already installed."
+fi
+
+
 # Check if subfinder is installed, and install if not
 if ! command -v subfinder &>/dev/null; then
     echo "subfinder is not installed. Installing..."
