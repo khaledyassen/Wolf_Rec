@@ -44,7 +44,7 @@ if [ ${#missing_files[@]} -eq 0 ]; then
     sleep 3
     
     # SSRF injection
-    cat SSRF.txt | qsreplace "Burp collaborator payload" | httpx --status-code -o SSRF_Inject_Response.txt
+    cat SSRF.txt | qsreplace "Burp collaborator payload" | httpx --status-code -fr -o SSRF_Inject_Response.txt
     sleep 3
     
     # SSTI injection
