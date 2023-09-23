@@ -30,7 +30,7 @@ if [ ${#missing_files[@]} -eq 0 ]; then
     # LFI injection
     
     cat LFI.txt | qsreplace FUZZ | while read url; do
-    ffuf -u $url -t 25 -mr "root:x" -w payloads_wordlist.txt -o LFI_Inject_Response.txt | anew LFI_new_Response.txt; done
+    ffuf -u $url -t 25 -mr "root:x" -w payloads_wordlist.txt -o LFI_Inject_Response.txt; done
     sleep 3
     
     # CRLF injection
@@ -44,7 +44,7 @@ if [ ${#missing_files[@]} -eq 0 ]; then
     sleep 3
     
     # SSRF injection
-    cat SSRF.txt | qsreplace "Burp collaborator payload" | while read url; do httpx -t 30 -rl 100 -u $url --status-code -o SSRF_Inject_Response.txt | anew SSRF_Inject_anew_Response.txt; done
+    cat SSRF.txt | qsreplace "Burp collaborator payload" | while read url; do httpx -t 30 -rl 100 -u $url --status-code -o SSRF_Inject_Response.txt; done
     sleep 3
     
     # SSTI injection
