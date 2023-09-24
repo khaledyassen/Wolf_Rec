@@ -28,13 +28,8 @@ if [ ${#missing_files[@]} -eq 0 ]; then
     sleep 3
     
     # LFI injection
-    
     cat LFI.txt | qsreplace FUZZ | while read url; do
     ffuf -u $url -t 25 -mr "root:x" -w payloads_wordlist.txt -o LFI_Inject_Response.txt; done
-    sleep 3
-    
-    # CRLF injection
-    crlfuzz -l ALLWithout404.txt -c 20 | anew CRLF_Inject_Response.txt
     sleep 3
     
     # Open Redirect
