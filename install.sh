@@ -115,14 +115,6 @@ else
     echo " is already installed."
 fi
 
-# Check if crlfuzz is installed, and install if not
-if ! command -v crlfuzz &>/dev/null; then
-    echo " is not installed. Installing..."
-    go install github.com/dwisiswant0/crlfuzz/cmd/crlfuzz@latest     
-else
-    echo " is already installed."
-fi
-
 # Check if headi is installed, and install if not
 if ! command -v headi &>/dev/null; then
     echo " is not installed. Installing..."
