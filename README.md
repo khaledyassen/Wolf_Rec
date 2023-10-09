@@ -1,6 +1,6 @@
 # 🐺️🐺️ Wolf 🐺️🐺️
 
-### It is a script written in bash and used for subdomain enumeration, Nmap scanning, gathering endpoints, and nuclei scanner
+### It is a script written in bash and are using for subdomain enumeration, Nmap scanning, gathering endpoints, and other attacks.
 
 # 💿️ Installation 💿️ 
 
