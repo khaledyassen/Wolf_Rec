@@ -25,17 +25,15 @@ sudo chmod +x install.sh ZapScan.sh
 
 #### 4] Enumerate public resources in AWS, Azure, and Google Cloud using cloud_enum.
 
-#### 5] Scanning for open buckets 
+#### 5] Gathering Endpoints using gau and a katana for crawling
 
-#### 6] Gathering Endpoints using gau and a katana for crawling
+#### 6] Gathering hidden parameters using param spider. 
 
-#### 7] Gathering hidden parameters using param spider. 
+#### 7] Port scanning using Nmap scanner
 
-#### 8] Port scanning using Nmap scanner
+#### 8] Vulnerability scanner using nuclei and Zaproxy.
 
-#### 9] Vulnerability scanner using nuclei and Zaproxy.
-
-#### 10] LFI, SQLI, XSS, SSRF, SSTI, CRLF, Smuggler, header and command injection using the `parma_Injection.sh` file  
+#### 9] LFI, SQLI, XSS, SSRF, SSTI, CRLF, Smuggler, header and command injection using the `parma_Injection.sh` file  
 
 # How to use it 🐺️
 
