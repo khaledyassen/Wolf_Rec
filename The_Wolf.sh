@@ -180,4 +180,6 @@ elif [ "$user_input_lowercase1" = "no" ] && [ "$user_input_lowercase2" = "no" ];
    Subdomains_Scan_Takeover_And_Buckets
    Crawling   
 fi
+
+printf "\n";
 echo "-------------------------------------------------------> Thanks :) made by @khaledyasse1882 🔥️ <----------------------------------------------------";
