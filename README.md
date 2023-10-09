@@ -37,7 +37,7 @@ sudo chmod +x install.sh ZapScan.sh
 
 #### 10] LFI, SQLI, XSS, SSRF, SSTI, CRLF, Smuggler, header and command injection using the `parma_Injection.sh` file  
 
-# How to use it
+# How to use it 🐺️
 
 #### Add the domains of your target in `scope.txt` file whatever the number of domains and leave the script to do the reset 🐺️
 
