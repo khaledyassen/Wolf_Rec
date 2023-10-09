@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 jp2a The_Wolf.jpg
 printf "\n";
 
