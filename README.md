@@ -15,7 +15,7 @@ sudo chmod +x install.sh ZapScan.sh
 ./install.sh
 ```
 
-# Usage 🐺️💣️❤️‍🔥️🐺️
+# Usage 🎯
 
 #### 1] Gathering all subdomains from a lot of tools with only one press  
 
@@ -25,7 +25,7 @@ sudo chmod +x install.sh ZapScan.sh
 
 #### 4] Enumerate public resources in AWS, Azure, and Google Cloud using cloud_enum.
 
-#### 5] scanning for open buckets 
+#### 5] Scanning for open buckets 
 
 #### 6] Gathering Endpoints using gau and a katana for crawling
 
@@ -39,7 +39,7 @@ sudo chmod +x install.sh ZapScan.sh
 
 # How to use it
 
-#### Add the domains of your target in `scope.txt` file whatever the number of domains and leave the script to do the reset 🐺️😎️🥰️🐺️
+#### Add the domains of your target in `scope.txt` file whatever the number of domains and leave the script to do the reset 🐺️
 
 ```
 ./The_Wolf.sh
