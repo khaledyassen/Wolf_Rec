@@ -66,7 +66,7 @@ printf "\n";
          printf "\n";
          cat subdomains.txt | anew buckets.txt;
          s3scanner -bucket-file buckets.txt | anew s3scanner_Response.txt;
-         cat s3scanner_Response.txt | | grep -v "not_exist" | grep -v "invalid" | anew Open_Buckets.txt
+         cat s3scanner_Response.txt | grep -v "not_exist" | grep -v "invalid" | anew Open_Buckets.txt
          echo "     ####  s3scanner is ended ✅️✅️✅️✅️";
          sleep 5
          printf "\n";
