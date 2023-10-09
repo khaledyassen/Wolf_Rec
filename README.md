@@ -1,6 +1,6 @@
 # 🐺️🐺️ Wolf 🐺️🐺️
 
-### It is a script written in bash and are using for subdomain enumeration, Nmap scanning, gathering endpoints, and other attacks.
+### It is a script written in bash for subdomain enumeration, Nmap scanning, gathering endpoints, and other attacks.
 
 # 💿️ Installation 💿️ 
 
@@ -35,7 +35,7 @@ sudo chmod +x *.sh
 
 #### 8] Vulnerability scanner using Zaproxy by `ZapScan.sh` file.
 
-#### 9] LFI, SQLI, XSS, SSRF, SSTI, CRLF, Smuggler, header and command injection using the `parma_Injection.sh` file.  
+#### 9] LFI, SQLI, XSS, SSRF, SSTI, CRLF, Smuggler, header, and command injection using the `parma_Injection.sh` file.  
 
 # How to use it 🐺️
 
