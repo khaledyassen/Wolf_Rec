@@ -17,25 +17,25 @@ sudo chmod +x *.sh
 
 # Usage 🎯
 
-#### 1] Subdomains Enumeration.
+##### 1] Subdomains Enumeration.
 
-#### 2] Subdomain brute forcing for small list You can add your own list.
+##### 2] Subdomain brute forcing for small list You can add your own list.
 
-#### 3] Scanning for subdomain takeover.
+##### 3] Scanning for subdomain takeover.
 
-#### 4] Enumerate public resources in AWS, Azure, and Google Cloud using cloud_enum.
+##### 4] Enumerate public resources in AWS, Azure, and Google Cloud using cloud_enum.
 
-#### 5] Gathering Endpoints using gau and katana for crawling.
+##### 5] Gathering Endpoints using gau and katana for crawling.
 
-#### 6] Gathering hidden parameters using param spider. 
+##### 6] Gathering hidden parameters using param spider. 
 
-#### 7] Port scanning using Nmap scanner.
+##### 7] Port scanning using Nmap scanner.
 
-#### 8] Scanning for known CVEs using jaeles.
+##### 8] Scanning for known CVEs using jaeles.
 
-#### 8] Vulnerability scanner using Zaproxy by `ZapScan.sh` file.
+##### 9] Vulnerability scanner using Zaproxy by `ZapScan.sh` file.
 
-#### 9] LFI, SQLI, XSS, SSRF, SSTI, CRLF, Smuggler, header, and command injection using the `parma_Injection.sh` file.  
+##### 10] LFI, SQLI, XSS, SSRF, SSTI, CRLF, Smuggler, header, and command injection using the `parma_Injection.sh` file.  
 
 # How to use it 🐺️
 
