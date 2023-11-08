@@ -1,34 +1,47 @@
 #!/bin/bash
+
+# Define ANSI escape codes for colors and formatting
+RESET="\033[0m"
+BOLD="\033[1m"
+ITALIC="\033[3m"
+UNDERLINE="\033[4m"
+RED="\033[91m"
+GREEN="\033[92m"
+YELLOW="\033[93m"
+BLUE="\033[94m"
+
+echo -e "${BOLD}${YELLOW}"
 jp2a The_Wolf.jpg
 printf "\n";
+echo -e "${RESET}"
 
 # Subdomain Enumeration Function
    Subdomain_Enumeration(){
       while read -r domain; do
-      echo "-------------------------------------------------------> Start the subdomain enumeration 🔥️☠️🔥️ ";
+      echo -e "${BOLD}${RED}-------------------------------------------------------> Start the subdomain enumeration 🔥️☠️🔥️ ${RESET}";
       printf "\n";
-      echo "----------------------------------------------> Sublist3r is loading 🌚️🌚️... :( ";
+      echo -e "${BOLD}${BLUE}----------------------------------------------> Sublist3r is loading 🌚️🌚️... :( ${RESET}";
       sublist3r -d $domain | anew subdomains.txt;
       printf "\n";
-      echo "     #### Sublist3r is Ended ✅️✅️";
+      echo -e "${BOLD}${GREEN}     #### Sublist3r Ended ✅️✅️${RESET}";
       printf "\n";
-      echo "----------------------------------------------> Assetfinder is loading 🌚️🌚️... :) ";
+      echo -e "${BOLD}${BLUE}----------------------------------------------> Assetfinder is loading 🌚️🌚️... :) ${RESET}";
       assetfinder $domain -subs-only | anew subdomains.txt;
       printf "\n";
-      echo "     #### Assetfinder is Ended ✅️✅️";
+      echo -e "${BOLD}${GREEN}     #### Assetfinder Ended ✅️✅️${RESET}";
       printf "\n";
-      echo "----------------------------------------------> Subfinder is loading 🌚️🌚️...:) ";
+      echo -e "${BOLD}${BLUE}----------------------------------------------> Subfinder is loading 🌚️🌚️...:) ${RESET}";
       subfinder -d $domain | anew subdomains.txt;
       printf "\n";
-      echo "     #### Subfinder is Ended ✅️✅️";
+      echo -e "${BOLD}${GREEN}     #### Subfinder Ended ✅️✅️${RESET}";
       printf "\n";
-      echo "----------------------------------------------> Amass is my favourite tool is loading 🌚️🔥️...) ";
+      echo -e "${BOLD}${BLUE}----------------------------------------------> Amass is my favourite tool is loading 🌚️🔥️...) ${RESET}";
       amass enum -config amassAPI_config.ini -passive -d $domain | anew subdomains.txt;
       printf "\n";
-      echo "     #### Amass is Ended ✅️✅️";
-      echo "----------------------------------------------> Add your list to the file for more subdomains) ";
+      echo -e "${BOLD}${GREEN}     #### Amass Ended ✅️✅️${RESET}";
+      echo -e "${BOLD}${BLUE}----------------------------------------------> Add your list to the file for more subdomains) ${RESET}";
       cat subdomains_list.txt | while read subfuzz; do echo $subfuzz".$domain"; done | anew subdomains.txt;
-      sleep 5
+      sleep 30
       printf "\n";
       printf "\n";
       done < scope.txt
@@ -36,39 +49,41 @@ printf "\n";
    
 # Function for the httpx for live URLs
       Httpx_Function(){
-         echo "-------------------------------------------------------> Start httpx 🔥️🔥️[live subdomains] and screenshots ";
+         echo -e "${BOLD}${RED}-------------------------------------------------------> Start httpx 🔥️🔥️[live subdomains] and screenshots${RESET} ";
          httpx --status-code -list subdomains.txt -p 80,443,8443,8000,5000,8080-o httpx.txt;
-         sleep 5
+         sleep 30
          printf "\n";
-         echo "-------------------------------------------------------> Start Flutteration 🌔️🌔️🔥️ ";
+         echo -e "${BOLD}${GREEN}-------------------------------------------------------> Start Fultteration 🌔️🌔️🔥️ ${RESET}";
          printf "\n";
-         echo "-------------------------------------------------------> Remove 404 🌚️🌚️:( ";
+         echo -e "${BOLD}${BLUE}-------------------------------------------------------> Remove 404 🌚️🌚️:( ${RESET}";
          printf "\n";
+         echo -e "${UNDERLINE}${BOLD}${RED}"
          cat httpx.txt | grep -v "404" | cut -d " " -f1 | anew ALLWithout404.txt;
+         echo -e "${RESET}"
          printf "\n";
       }
       
 # Function for the subdomain takeover and open buckets scanning
        Subdomains_Scan_Takeover_And_Buckets(){
-         echo "-------------------------------------------------------> Scan for subdomainTakeover using subzy 💝️💝️:(";
+         echo -e "${BOLD}${BLUE}-------------------------------------------------------> Scan for subdomainTakeover using subzy 💝️💝️:(${RESET}";
          printf "\n";
          cat httpx.txt | grep "404" | cut -d " " -f1 | anew 404.txt;
          subzy run --targets 404.txt | anew takeover.txt;
          printf "\n";
-         echo "     #### Httpx and subdomain TakeOver is Ended ✅️✅️✅️✅️";
+         echo -e "${BOLD}${GREEN}     #### Httpx and subdomain TakeOver Ended ✅️✅️✅️✅️${RESET}";
          printf "\n";
-         echo "-------------------------------------------------------> Scan for open buckets using cloud_enum and s3scanner💝️:(";
+         echo -e "${BOLD}${RED}-------------------------------------------------------> Scan for open buckets using cloud_enum and s3scanner💝️:(${RESET}";
          cat scope.txt >> buckets.txt;
          cat Domains.txt | anew buckets.txt;
          python3 cloud_enum/cloud_enum.py -kf buckets.txt -qs >> Cloud_Result.txt;
-         echo "     #### cloud enum scanner is ended ✅️✅️✅️✅️";
-         sleep 5
+         echo -e "${BOLD}${GREEN}     #### cloud enum scanner ended ✅️✅️✅️✅️${RESET}";
+         sleep 15
          printf "\n";
          cat subdomains.txt | anew buckets.txt;
          s3scanner -bucket-file buckets.txt | anew s3scanner_Response.txt;
          cat s3scanner_Response.txt | grep -v "not_exist" | grep -v "invalid" | anew Open_Buckets.txt
-         echo "     ####  s3scanner is ended ✅️✅️✅️✅️";
-         sleep 5
+         echo -e "${BOLD}${BLUE}     ####  s3scanner ended ✅️✅️✅️✅️${RESET}";
+         sleep 30
          printf "\n";
        }
 
@@ -76,25 +91,31 @@ printf "\n";
 
 # Function for the Crawling
       Crawling(){
-         echo "-------------------------------------------------------> param spider 🔗️💝️:(";
-         while read Line; do
-          python3 ParamSpider/paramspider.py -d "$Line" -o "$Line".txt
+         echo -e "${BOLD}${RED}-------------------------------------------------------> Start param spider 🔗️💝️:(${RESET}";
+        while read Line; do
+         python3 ParamSpider/paramspider.py -d "$Line" -o "$Line".txt
          done < Domains.txt
+         echo -e "${UNDERLINE}${BOLD}${BLUE}"
          cat output/*.txt | anew parameters.txt;
          cat parameters.txt | anew Endpoints.txt;
-         echo "     #### param spider is ended ✅️✅️✅️✅️";
-         sleep 5
+         echo -e "${RESET}"
+         echo -e "${BOLD}${BLUE}     #### param spider is ended ✅️✅️✅️✅️${RESET}";
+         sleep 15
          printf "\n";
-         echo "-------------------------------------------------------> Gathering endpoints using gau and katana 🔗️🔗️🔥️🔗️ ";
+         echo -e "${BOLD}${RED}-------------------------------------------------------> Gathering endpoints using gau and katana 🔗️🔗️🔥️🔗️ ${RESET}";
          printf "\n";
          printf "\n";
-         echo "-------------------------------------------------------> Gau is comming 🔗️🔥️ ";
+         echo -e "${BOLD}${YELLOW}-------------------------------------------------------> Gau is comming 🔗️🔥️ ${RESET}";
+         echo -e "${UNDERLINE}${BOLD}${BLUE}"
          cat Domains.txt | gau --blacklist png,jpg,gif,css,ttf,woff,svg --threads 2 | /usr/local/bin/uro | anew Endpoints.txt;
-         sleep 6
-         echo "-------------------------------------------------------> Let's crawling using katana 🔗️🔥️ ";
+         echo -e "${RESET}"
+         sleep 15
+         echo -e "${BOLD}${GREEN}-------------------------------------------------------> Let's crawling using katana 🔗️🔥️ ${RESET}";
+         echo -e "${UNDERLINE}${BOLD}${BLUE}"
          cat ALLWithout404.txt | katana -d 3 -jc -delay 10 | /usr/local/bin/uro | anew Katana.txt;
-         sleep 6
-         echo "-------------------------------------------------------> Let's Get the live of them for nuclei 🔥️ ";
+         echo -e "${RESET}"
+         sleep 20
+         echo -e "${BOLD}${BLUE}-------------------------------------------------------> Let's Get the live of them for jaeles 🔥️ ${RESET}";
          cat Endpoints.txt | hakcheckurl | anew LiveEndpoints.txt;
          cat Katana.txt | anew LiveEndpoints.txt;
          sleep 5
@@ -103,54 +124,56 @@ printf "\n";
    
 # Function for the port scan [Nmap]
       Nmap(){
-         echo "-------------------------------------------------------> Using Nmap scanner for scanning open ports 🔍️🔍️🔍️ ";
+         echo -e "${BOLD}${RED}-------------------------------------------------------> Using Nmap scanner for scanning open ports 🔍️🔍️🔍️ ${RESET}";
          printf "\n";
          nmap --open -iL Domains.txt -sS -Pn -T4 -oA NmapScanerResutl;
          printf "\n";
-         echo "     #### Nmap scanner is ended ✅️✅️✅️✅️";
-         sleep 5
+         echo -e "${BOLD}${GREEN}     #### Nmap scanner is ended ✅️✅️✅️✅️${RESET}";
+         sleep 30
          printf "\n";
       }
       
 # Function for the knwon CVE
       CVE_Scan(){
-         echo "-------------------------------------------------------> 🔥️☠️😎️ jaeles scanner for all 🔥️ ";
+         echo -e "${BOLD}${RED}-------------------------------------------------------> 🔥️☠️😎️ jaeles scanner for all 🔥️ ${RESET}";
          printf "\n";
+         echo -e "${UNDERLINE}${BOLD}${BLUE}"
          cat httpx.txt | cut -d " " -f1 | anew jaeles.txt;
          cat LiveEndpoints.txt | /usr/local/bin/uro | cut -d " " -f1 | anew jaeles.txt;
+         echo -e "${RESET}"
          jaeles scan -c 80 -U jaeles.txt -o output2;
          printf "\n";
-         echo "     #### jaeles scanner is ended ✅️✅️✅️✅️";
-         sleep 6
+         echo -e "${BOLD}${GREEN}     #### jaeles scanner is ended ✅️✅️✅️✅️${RESET}";
+         sleep 30
          printf "\n";
       }
 
 # Port scan
-echo "Do you want to Scan for open ports (Yes/No)? "
+echo -e "${BOLD}${GREEN}Do you want to Scan for open ports (${BLUE}Yes/${RED}No${RESET})? "
 read user_input1
 user_input_lowercase1=$(echo "$user_input1" | tr '[:upper:]' '[:lower:]')
 
 # Check the user's input and decide whether to execute the function
 if [ "$user_input_lowercase1" == "yes" ]; then
-    echo "Good luck with the port scan using Nmap"
+    echo -e "${BOLD}${BLUE}Good luck with the port scan using Nmap${RESET}"
 elif [ "$user_input_lowercase1" == "no" ]; then
-    echo "Execution of the Nmap is skipped."
+    echo -e "${BOLD}${BLUE}Execution of the Nmap is skipped.${RESET}"
 else
-    echo "Invalid input. Please enter 'Yes' or 'No'."
+    echo -e "${BOLD}${RED}Invalid input. Please enter 'Yes' or 'No'.${RESET}"
 fi
 
 # CVE Scan
-echo "Do you want to Scan for known CVEs (Yes/No)? "
+echo -e "${BOLD}${GREEN}Do you want to Scan for known CVEs (${BLUE}Yes/${RED}No${RESET})? "
 read user_input2
 user_input_lowercase2=$(echo "$user_input2" | tr '[:upper:]' '[:lower:]')
 
 # Check the user's input and decide whether to execute the function
 if [ "$user_input_lowercase2" == "yes" ]; then
-    echo "Good luck with the known CVEs Scan"
+    echo -e "${BOLD}${BLUE}Good luck with the known CVEs Scan${RESET}"
 elif [ "$user_input_lowercase2" == "no" ]; then
-    echo "Execution of the CVE_Scan is skipped."
+    echo -e "${BOLD}${BLUE}Execution of the CVE_Scan is skipped.${RESET}"
 else
-    echo "Invalid input. Please enter 'Yes' or 'No'."
+    echo -e "${BOLD}${RED}Invalid input. Please enter 'Yes' or 'No'.${RESET}"
 fi
 
 
@@ -182,4 +205,4 @@ elif [ "$user_input_lowercase1" = "no" ] && [ "$user_input_lowercase2" = "no" ];
 fi
 
 printf "\n";
-echo "-------------------------------------------------------> Thanks :) created by @khaledyasse1882 🔥️ <----------------------------------------------------";
+echo -e "${ITALIC}${BOLD}-------------------------------------------------------> ${RED}Thanks :) created by ${GREEN}@khaledyasse1882 ${RESET}🔥️ <----------------------------------------------------${RESET}";
