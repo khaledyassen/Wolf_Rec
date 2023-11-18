@@ -123,8 +123,8 @@ else
     echo " is already installed."
 fi
 
-# Check if ffuf, zaproxy, jp2a, sublist3r, commix, and sqlmap is installed, and install if not
-sudo apt install -y ffuf sublist3r zaproxy sqlmap jp2a commix
+# Check if ffuf, zaproxy, sublist3r, commix, and sqlmap is installed, and install if not
+sudo apt install -y ffuf sublist3r zaproxy sqlmap commix
 
 # Check if uro is installed, and install if not
 if ! command -v uro &>/dev/null; then
