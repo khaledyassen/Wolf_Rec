@@ -33,6 +33,14 @@ else
     echo "gau is already installed."
 fi
 
+# Check if uncover is installed, and install if not
+if ! command -v uncover &>/dev/null; then
+    echo "uncover is not installed. Installing..."
+    go install -v github.com/projectdiscovery/uncover/cmd/uncover@latest
+else
+    echo "uncover is already installed."
+fi
+
 # Check if unfurl is installed, and install if not
 if ! command -v unfurl &>/dev/null; then
     echo "unfurl is not installed. Installing..."
