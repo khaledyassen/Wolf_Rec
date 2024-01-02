@@ -145,9 +145,20 @@ echo -e "${RESET}"
    
 # Function for the port scan [Nmap]
       Nmap(){
+         echo -e "${BOLD}${RED}-------------------------------------------------------> Using uncover to get the IPs from the scope 🔍️🔍️🔍️ ${RESET}";
+         echo -e "${BOLD}${GREEN}Enter the API key for shodan ${RESET})? "
+         read user_input_SHODAN_key
+         echo -e "${BOLD}${GREEN}Enter the API ID for censys ${RESET})? "
+         read user_input_CENSYS_API_ID
+         echo -e "${BOLD}${GREEN}Enter the API secret for censys ${RESET})? "
+         read user_input_CENSYS_API_secret
+         export SHODAN_API_KEY=user_input_SHODAN_key;
+         export CENSYS_API_ID=user_input_CENSYS_API_ID;
+         export CENSYS_API_SECRET=user_input_CENSYS_API_secret;
+         cat scope.txt | uncover -e shodan,censys | grep -E -o "([0-9]{1,3}[\\.]){3}[0-9]{1,3}" | anew Domains.txt; 
          echo -e "${BOLD}${RED}-------------------------------------------------------> Using Nmap scanner for scanning open ports 🔍️🔍️🔍️ ${RESET}";
          printf "\n";
-         nmap --open -iL Domains.txt -sS -Pn -T4 -oA NmapScanerResutl;
+         nmap --open -iL Domains.txt -sS -Pn -T3 -oA NmapScanerResutl;
          printf "\n";
          echo -e "${BOLD}${GREEN}     #### Nmap scanner is ended ✅️✅️✅️✅️${RESET}";
          sleep 30
