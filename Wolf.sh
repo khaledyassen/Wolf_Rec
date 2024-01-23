@@ -114,7 +114,7 @@ echo -e "${RESET}"
       Crawling(){
          echo -e "${BOLD}${RED}-------------------------------------------------------> Start param spider 🔗️💝️:(${RESET}";
         while read Line; do
-         python3 ParamSpider/paramspider.py -d "$Line" -o "$Line".txt
+         python3 ParamSpider/paramspider/main.py -d "$Line" -o "$Line".txt
          done < Domains.txt
          echo -e "${UNDERLINE}${BOLD}${BLUE}"
          cat output/*.txt | anew parameters.txt;
