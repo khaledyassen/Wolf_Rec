@@ -133,7 +133,7 @@ echo -e "${RESET}"
          sleep 10
          echo -e "${BOLD}${GREEN}-------------------------------------------------------> Let's crawling using katana 🔗️🔥️ ${RESET}";
          echo -e "${UNDERLINE}${BOLD}${BLUE}"
-         cat ALLWithout404.txt | katana -d 3 -jc -delay 10 | /usr/local/bin/uro | anew Katana.txt;
+         cat ALLWithout404.txt | katana -d 3 -jc -delay 10 | /home/$USER/.local/bin/uro | anew Katana.txt;
          echo -e "${RESET}"
          sleep 10
          echo -e "${BOLD}${BLUE}-------------------------------------------------------> Let's Get the live of them for jaeles 🔥️ ${RESET}";
@@ -158,7 +158,7 @@ echo -e "${RESET}"
          cat scope.txt | uncover -e shodan,censys | grep -E -o "([0-9]{1,3}[\\.]){3}[0-9]{1,3}" | anew Domains.txt; 
          echo -e "${BOLD}${RED}-------------------------------------------------------> Using Nmap scanner for scanning open ports 🔍️🔍️🔍️ ${RESET}";
          printf "\n";
-         nmap --open -iL Domains.txt -sS -Pn -T3 -oA NmapScanerResutl;
+         sudo nmap --open -iL Domains.txt -sS -Pn -T3 -oA NmapScanerResutl;
          printf "\n";
          echo -e "${BOLD}${GREEN}     #### Nmap scanner is ended ✅️✅️✅️✅️${RESET}";
          sleep 12
