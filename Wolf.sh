@@ -62,7 +62,7 @@ echo -e "${RESET}"
       echo -e "${BOLD}${GREEN}     #### Amass Ended ✅️✅️${RESET}";
       echo -e "${BOLD}${BLUE}----------------------------------------------> Add your list to the file for more subdomains) ${RESET}";
       cat subdomains_list.txt | while read subfuzz; do echo $subfuzz".$domain"; done | anew subdomains.txt;
-      sleep 30
+      sleep 8
       printf "\n";
       printf "\n";
       done < scope.txt
@@ -72,7 +72,7 @@ echo -e "${RESET}"
       Httpx_Function(){
          echo -e "${BOLD}${RED}-------------------------------------------------------> Start httpx 🔥️🔥️[live subdomains] and screenshots${RESET} ";
          httpx --status-code -list subdomains.txt -p 80,443,8443,8000,5000,8080-o httpx.txt;
-         sleep 30
+         sleep 12
          printf "\n";
          echo -e "${BOLD}${GREEN}-------------------------------------------------------> Start Fultteration 🌔️🌔️🔥️ ${RESET}";
          printf "\n";
@@ -98,13 +98,13 @@ echo -e "${RESET}"
          cat Domains.txt | anew buckets.txt;
          python3 cloud_enum/cloud_enum.py -kf buckets.txt -qs >> Cloud_Result.txt;
          echo -e "${BOLD}${GREEN}     #### cloud enum scanner ended ✅️✅️✅️✅️${RESET}";
-         sleep 15
+         sleep 10
          printf "\n";
          cat subdomains.txt | anew buckets.txt;
          s3scanner -bucket-file buckets.txt | anew s3scanner_Response.txt;
          cat s3scanner_Response.txt | grep -v "not_exist" | grep -v "invalid" | anew Open_Buckets.txt
          echo -e "${BOLD}${BLUE}     ####  s3scanner ended ✅️✅️✅️✅️${RESET}";
-         sleep 30
+         sleep 10
          printf "\n";
        }
 
@@ -121,7 +121,7 @@ echo -e "${RESET}"
          cat parameters.txt | anew Endpoints.txt;
          echo -e "${RESET}"
          echo -e "${BOLD}${BLUE}     #### param spider is ended ✅️✅️✅️✅️${RESET}";
-         sleep 15
+         sleep 10
          printf "\n";
          echo -e "${BOLD}${RED}-------------------------------------------------------> Gathering endpoints using gau and katana 🔗️🔗️🔥️🔗️ ${RESET}";
          printf "\n";
@@ -130,12 +130,12 @@ echo -e "${RESET}"
          echo -e "${UNDERLINE}${BOLD}${BLUE}"
          cat Domains.txt | gau --blacklist png,jpg,gif,css,ttf,woff,svg --threads 2 | /usr/local/bin/uro | anew Endpoints.txt;
          echo -e "${RESET}"
-         sleep 15
+         sleep 10
          echo -e "${BOLD}${GREEN}-------------------------------------------------------> Let's crawling using katana 🔗️🔥️ ${RESET}";
          echo -e "${UNDERLINE}${BOLD}${BLUE}"
          cat ALLWithout404.txt | katana -d 3 -jc -delay 10 | /usr/local/bin/uro | anew Katana.txt;
          echo -e "${RESET}"
-         sleep 20
+         sleep 10
          echo -e "${BOLD}${BLUE}-------------------------------------------------------> Let's Get the live of them for jaeles 🔥️ ${RESET}";
          cat Endpoints.txt | hakcheckurl | anew LiveEndpoints.txt;
          cat Katana.txt | anew LiveEndpoints.txt;
@@ -161,7 +161,7 @@ echo -e "${RESET}"
          nmap --open -iL Domains.txt -sS -Pn -T3 -oA NmapScanerResutl;
          printf "\n";
          echo -e "${BOLD}${GREEN}     #### Nmap scanner is ended ✅️✅️✅️✅️${RESET}";
-         sleep 30
+         sleep 12
          printf "\n";
       }
       
