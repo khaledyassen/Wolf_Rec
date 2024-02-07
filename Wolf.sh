@@ -128,7 +128,7 @@ echo -e "${RESET}"
          printf "\n";
          echo -e "${BOLD}${YELLOW}-------------------------------------------------------> Gau is comming 🔗️🔥️ ${RESET}";
          echo -e "${UNDERLINE}${BOLD}${BLUE}"
-         cat Domains.txt | gau --blacklist png,jpg,gif,css,ttf,woff,svg --threads 2 | /usr/local/bin/uro | anew Endpoints.txt;
+         cat Domains.txt | gau --blacklist png,jpg,gif,css,ttf,woff,svg --threads 2 | /home/$USER/.local/bin/uro | anew Endpoints.txt;
          echo -e "${RESET}"
          sleep 10
          echo -e "${BOLD}${GREEN}-------------------------------------------------------> Let's crawling using katana 🔗️🔥️ ${RESET}";
@@ -137,8 +137,8 @@ echo -e "${RESET}"
          echo -e "${RESET}"
          sleep 10
          echo -e "${BOLD}${BLUE}-------------------------------------------------------> Let's Get the live of them for jaeles 🔥️ ${RESET}";
+         cat Katana.txt | anew Endpoints.txt;
          cat Endpoints.txt | hakcheckurl | anew LiveEndpoints.txt;
-         cat Katana.txt | anew LiveEndpoints.txt;
          sleep 5
       }
 
