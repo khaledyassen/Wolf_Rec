@@ -1,0 +1,16 @@
+localtest.me
+127.0.0.1
+lacolhost.com
+yoogle.com
+127-0-0-1.org.uk
+localhost
+127.1
+10.0.0.0
+10.0.0.1
+172.16.0.0
+172.16.0.1
+192.168.1.0
+192.168.1.1
+127.0.0.1.nip.io
+169.254.169.254.nip.io
+Something.google.com.169.254.169.254.nip.io
