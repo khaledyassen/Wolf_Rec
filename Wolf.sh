@@ -128,7 +128,7 @@ echo -e "${RESET}"
          printf "\n";
          echo -e "${BOLD}${YELLOW}-------------------------------------------------------> Gau is comming 🔗️🔥️ ${RESET}";
          echo -e "${UNDERLINE}${BOLD}${BLUE}"
-         cat output/Domains.txt | gau --blacklist png,jpg,gif,css,ttf,woff,svg --threads 2 | /home/$USER/.local/bin/uro | anew output/Endpoints.txt;
+         cat scope.txt | gau --blacklist png,jpg,gif,css,ttf,woff,svg --threads 5 | /home/$USER/.local/bin/uro | anew output/Endpoints.txt;
          echo -e "${RESET}"
          sleep 10
          echo -e "${BOLD}${GREEN}-------------------------------------------------------> Let's crawling using katana 🔗️🔥️ ${RESET}";
