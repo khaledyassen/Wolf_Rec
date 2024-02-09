@@ -128,17 +128,17 @@ echo -e "${RESET}"
          printf "\n";
          echo -e "${BOLD}${YELLOW}-------------------------------------------------------> Gau is comming 🔗️🔥️ ${RESET}";
          echo -e "${UNDERLINE}${BOLD}${BLUE}"
-         cat scope.txt | gau --blacklist png,jpg,gif,css,ttf,woff,svg --threads 5 | /home/$USER/.local/bin/uro | anew output/Endpoints.txt;
+         cat scope.txt | gau --blacklist png,jpg,gif,css,ttf,woff,svg --threads 5 | anew output/Endpoints.txt;
          echo -e "${RESET}"
          sleep 10
          echo -e "${BOLD}${GREEN}-------------------------------------------------------> Let's crawling using katana 🔗️🔥️ ${RESET}";
          echo -e "${UNDERLINE}${BOLD}${BLUE}"
-         cat output/ALLWithout404.txt | katana -jc -delay 2 | /home/$USER/.local/bin/uro | anew output/Katana.txt;
+         cat output/ALLWithout404.txt | katana -jc -delay 2 | anew output/Endpoints.txt;
          echo -e "${RESET}"
          sleep 10
          echo -e "${BOLD}${BLUE}-------------------------------------------------------> Let's Get the live of them for jaeles 🔥️ ${RESET}";
-         cat output/Katana.txt | anew output/Endpoints.txt;
-         cat output/Endpoints.txt | hakcheckurl | anew output/LiveEndpoints.txt;
+         cat output/Endpoints.txt | /home/$USER/.local/bin/uro  | anew Endpoints_Filtered.txt;
+         cat output/Endpoints_Filtered.txt | hakcheckurl | anew output/LiveEndpoints.txt;
          sleep 5
       }
 
