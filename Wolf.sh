@@ -133,7 +133,7 @@ echo -e "${RESET}"
          sleep 10
          echo -e "${BOLD}${GREEN}-------------------------------------------------------> Let's crawling using katana 🔗️🔥️ ${RESET}";
          echo -e "${UNDERLINE}${BOLD}${BLUE}"
-         cat output/ALLWithout404.txt | katana -d 3 -jc -delay 10 | /home/$USER/.local/bin/uro | anew output/Katana.txt;
+         cat output/ALLWithout404.txt | katana -jc -delay 2 | /home/$USER/.local/bin/uro | anew output/Katana.txt;
          echo -e "${RESET}"
          sleep 10
          echo -e "${BOLD}${BLUE}-------------------------------------------------------> Let's Get the live of them for jaeles 🔥️ ${RESET}";
