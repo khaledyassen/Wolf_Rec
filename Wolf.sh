@@ -71,7 +71,7 @@ echo -e "${RESET}"
 # Function for the httpx for live URLs
       Httpx_Function(){
          echo -e "${BOLD}${RED}-------------------------------------------------------> Start httpx 🔥️🔥️[live subdomains] and screenshots${RESET} ";
-         httpx --status-code -list output/subdomains.txt -p 80,443,8443,8000,5000,8080-o output/httpx.txt;
+         httpx --status-code -list output/subdomains.txt -t 20 -o output/httpx.txt;
          sleep 12
          printf "\n";
          echo -e "${BOLD}${GREEN}-------------------------------------------------------> Start Fultteration 🌔️🌔️🔥️ ${RESET}";
@@ -152,10 +152,16 @@ echo -e "${RESET}"
          read user_input_CENSYS_API_ID
          echo -e "${BOLD}${GREEN}Enter the API secret for censys ${RESET})? "
          read user_input_CENSYS_API_secret
+         echo -e "${BOLD}${GREEN}Enter the Email for fofa ${RESET})? "
+         read user_input_FOFA_EMAIL
+         echo -e "${BOLD}${GREEN}Enter the KEY for fofa ${RESET})? "
+         read user_input_FOFA_KEY
          export SHODAN_API_KEY=user_input_SHODAN_key;
          export CENSYS_API_ID=user_input_CENSYS_API_ID;
          export CENSYS_API_SECRET=user_input_CENSYS_API_secret;
-         cat scope.txt | uncover -e shodan,censys | grep -E -o "([0-9]{1,3}[\\.]){3}[0-9]{1,3}" | anew output/Domains.txt; 
+         export FOFA_EMAIL=user_input_FOFA_EMAIL;
+         export FOFA_KEY=user_input_FOFA_KEY;
+         cat scope.txt | uncover -e shodan,censys,fofa | grep -E -o "([0-9]{1,3}[\\.]){3}[0-9]{1,3}" | anew output/Domains.txt; 
          echo -e "${BOLD}${RED}-------------------------------------------------------> Using Nmap scanner for scanning open ports 🔍️🔍️🔍️ ${RESET}";
          printf "\n";
          sudo nmap --open -iL output/Domains.txt -sS -Pn -T3 -oA output/NmapScanerResutl;
