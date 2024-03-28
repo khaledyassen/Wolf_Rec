@@ -1,4 +1,4 @@
-# 🐺️🐺️ Wolf 🐺️🐺️
+# 🐺️🐺️ Wolf_Rec 🐺️🐺️
 
 ### It is a script written in bash for subdomain enumeration, Nmap scanning, gathering endpoints, and other attacks.
 
