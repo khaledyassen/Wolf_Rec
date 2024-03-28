@@ -10,7 +10,7 @@
 
 ```
 git clone https://github.com/khaledyassen/Wolf_Rec.git
-cd Wolf
+cd Wolf_Rec
 sudo chmod +x *.sh
 ./install.sh
 ```
