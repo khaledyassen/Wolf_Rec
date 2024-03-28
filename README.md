@@ -41,7 +41,7 @@ sudo chmod +x *.sh
 
 #### Add the domains of your target in `scope.txt` file whatever the number of domains and leave the script to do the reset 🐺️
 ```
-./Wolf.sh
+./Wolf_Rec.sh
 ```
 
 #### For parameter injection for different vulnerabilities using the most popular tool run the following file.
