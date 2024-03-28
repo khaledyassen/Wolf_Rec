@@ -9,7 +9,7 @@
 #### Require the `go` language in your machine Then
 
 ```
-git clone https://github.com/khaledyassen/Wolf.git
+git clone https://github.com/khaledyassen/Wolf_Rec.git
 cd Wolf
 sudo chmod +x *.sh
 ./install.sh
