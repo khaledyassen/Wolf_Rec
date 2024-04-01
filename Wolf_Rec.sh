@@ -71,7 +71,8 @@ echo -e "${RESET}"
 # Function for the httpx for live URLs
       Httpx_Function(){
          echo -e "${BOLD}${RED}-------------------------------------------------------> Start httpx 🔥️🔥️[live subdomains] and screenshots${RESET} ";
-         httpx --status-code -list output/subdomains.txt -t 20 -o output/httpx.txt;
+         naabu -p 80,81,300,443,591,593,832,981,1010,1311,2082,2087,2095,2096,2480,3000,3128,3333,4243,4567,4711,4712,4993,5000,5104,5108,5800,6543,7000,7396,7474,8000,8001,8008,8014,8042,8069,8080,8081,8088,8090,8091,8118,8123,8172,8222,8243,8280,8281,8333,8443,8500,8834,8880,8888,8983,9000,9043,9060,9080,9090,9091,9200,9443,9800,9981,12443,16080,18091,18092,20720,28017  -list output/subdomains.txt -o output/nabuu.txt;
+         httpx --status-code -tech-detect -screenshots -list output/nabuu.txt -t 20 -o output/httpx.txt;
          sleep 12
          printf "\n";
          echo -e "${BOLD}${GREEN}-------------------------------------------------------> Start Fultteration 🌔️🌔️🔥️ ${RESET}";
