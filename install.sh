@@ -109,8 +109,16 @@ fi
 
 # Check if dalfox is installed, and install if not
 if ! command -v dalfox &>/dev/null; then
-    echo " is not installed. Installing..."
+    echo "dalfox is not installed. Installing..."
     go install github.com/hahwul/dalfox/v2@latest
+else
+    echo " is already installed."
+fi
+
+# Check if nabuu is installed, and install if not
+if ! command -v naabu &>/dev/null; then
+    echo "nabuu is not installed. Installing..."
+    go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest
 else
     echo " is already installed."
 fi
@@ -132,7 +140,7 @@ else
 fi
 
 # Check if ffuf, zaproxy, sublist3r, commix, and sqlmap is installed, and install if not
-sudo apt install -y ffuf sublist3r zaproxy sqlmap commix
+sudo apt install -y ffuf sublist3r zaproxy sqlmap commix nmap
 
 # Check if uro is installed, and install if not
 if ! command -v uro &>/dev/null; then
