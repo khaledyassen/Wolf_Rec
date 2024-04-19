@@ -1,5 +1,4 @@
 #!/bin/bash
-# Need to change the SSRF tool
 
 
 required_files=("httpx.txt" "XSS.txt" "LFI.txt" "Smuggler.txt" "SSRF.txt" "SSTI.txt" "SQL.txt" "OS_Commands.txt" "IPs.txt")
