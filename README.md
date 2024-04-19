@@ -17,11 +17,11 @@ sudo chmod +x *.sh
 
 # Usage 🎯
 
-##### 1] Subdomains Enumeration.
+##### 1] Subdomains Enumeration using different Tools.
 
-##### 2] Subdomain brute forcing for small list You can add your own list.
+##### 2] Scanning for subdomain takeover.
 
-##### 3] Scanning for subdomain takeover.
+##### 3] Enumerating active subdomains using httpx and nabuu.
 
 ##### 4] Enumerate public resources in AWS, Azure, and Google Cloud using cloud_enum.
 
@@ -35,11 +35,11 @@ sudo chmod +x *.sh
 
 ##### 9] Vulnerability scanner using Zaproxy by `ZapScan.sh` file.
 
-##### 10] LFI, SQLI, XSS, SSRF, SSTI, CRLF, Smuggler, header, and command injection using the `Injector.sh` file.  
+##### 10] LFI, SQLI, XSS, SSRF, SSTI, CRLF, Smuggler, header, and command injection using  known tools in `Injector.sh` file.  
 
 # How to use it 🐺️
 
-#### Add the domains of your target in `scope.txt` file whatever the number of domains and leave the script to do the reset 🐺️
+#### Add the domains of your target in `scope.txt` file whatever the number of domains and run the tool 🐺️
 ```
 ./Wolf_Rec.sh
 ```
