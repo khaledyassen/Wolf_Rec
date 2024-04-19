@@ -37,6 +37,8 @@ sudo chmod +x *.sh
 
 ##### 10] LFI, SQLI, XSS, SSRF, SSTI, CRLF, Smuggler, header, and command injection using  known tools in `Injector.sh` file.  
 
+##### 11] Save All results in the output directory.
+
 # How to use it 🐺️
 
 #### Add the domains of your target in `scope.txt` file whatever the number of domains and run the tool 🐺️
