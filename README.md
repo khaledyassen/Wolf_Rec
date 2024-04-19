@@ -35,7 +35,7 @@ sudo chmod +x *.sh
 
 ##### 9] Vulnerability scanner using Zaproxy by `ZapScan.sh` file.
 
-##### 10] LFI, SQLI, XSS, SSRF, SSTI, CRLF, Smuggler, header, and command injection using the `parma_Injection.sh` file.  
+##### 10] LFI, SQLI, XSS, SSRF, SSTI, CRLF, Smuggler, header, and command injection using the `Injector.sh` file.  
 
 # How to use it 🐺️
 
@@ -46,7 +46,7 @@ sudo chmod +x *.sh
 
 #### For parameter injection for different vulnerabilities using the most popular tool run the following file.
 ```
-./Param_Injection.sh 
+./Injector.sh 
 ```
 
 #### If you want to use the Zap proxy vulnerability scanner run the following file.
