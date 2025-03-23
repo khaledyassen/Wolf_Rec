@@ -25,7 +25,7 @@ fi
 if [ -f "LFI.txt" ]; then
     # LFI injection
     cat LFI.txt | qsreplace FUZZ | while read url; do
-        ffuf -u $url -t 25 -mr "root:x" -w payloads_wordlist.txt -o output/LFI_Inject_Response.txt;
+        ffuf -u $url -t 25 -mr "root:x" -w LFI_fuzz.txt -o output/LFI_Inject_Response.txt;
     done
     sleep 5
 fi
