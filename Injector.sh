@@ -60,7 +60,7 @@ fi
 # Check SQL.txt file
 if [ -f "SQL.txt" ]; then
     # SQL injection
-    sqlmap -m SQL.txt --level 3 --risk 1 --batch --dbs --tamper=between | anew output/SQL_Inject_Response.txt;
+    sqlmap -m SQL.txt --level 3 --risk 1 --batch --dbs --random-agent --tamper=between | anew output/SQL_Inject_Response.txt;
     sleep 5
 fi
 
