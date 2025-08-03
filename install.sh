@@ -123,13 +123,6 @@ else
     echo " is already installed."
 fi
 
-# Check if jaeles is installed, and install if not
-if ! command -v jaeles &>/dev/null; then
-    echo " is not installed. Installing..."
-    go install github.com/jaeles-project/jaeles@latest     
-else
-    echo " is already installed."
-fi
 
 # Check if headi is installed, and install if not
 if ! command -v headi &>/dev/null; then
@@ -170,13 +163,6 @@ python3 commix/setup.py install
 git clone https://github.com/devanshbatham/ParamSpider
 pip3 install -r ParamSpider/requirements.txt
 
-# check if the liffy is installed
-git clone http://github.com/mzfr/liffy
-pip3 install -r liffy/requirements.txt
-
 # Check if smuggler is installed
 git clone https://github.com/defparam/smuggler.git
 
-# Check if Oralyzer is installed
-git clone https://github.com/r0075h3ll/Oralyzer.git
-pip3 install -r Oralyzer/requirements.txt
