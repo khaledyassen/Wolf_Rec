@@ -172,17 +172,17 @@ echo -e "${RESET}"
          printf "\n";
       }
       
-# Function for the knwon CVE
+# Function for the known CVE
       CVE_Scan(){
-         echo -e "${BOLD}${RED}-------------------------------------------------------> 🔥️☠️😎️ jaeles scanner for all 🔥️ ${RESET}";
+         echo -e "${BOLD}${RED}-------------------------------------------------------> 🔥️☠️😎️ Nuclei scanner for all 🔥️ ${RESET}";
          printf "\n";
          echo -e "${UNDERLINE}${BOLD}${BLUE}"
-         cat output/httpx.txt | cut -d " " -f1 | anew output/jaeles.txt;
-         cat output/LiveEndpoints.txt | /usr/local/bin/uro | cut -d " " -f1 | anew output/jaeles.txt;
+         cat output/httpx.txt | cut -d " " -f1 | anew output/Nuclei.txt;
+         cat output/LiveEndpoints.txt | /usr/local/bin/uro | cut -d " " -f1 | anew output/Nuclei.txt;
          echo -e "${RESET}"
-         jaeles scan -c 80 -U output/jaeles.txt -o output_jaels;
+         nuclei -l output/Nuclei.txt -severity critical,high,medium,low -o output/Nuclei_output.txt;
          printf "\n";
-         echo -e "${BOLD}${GREEN}     #### jaeles scanner is ended ✅️✅️✅️✅️${RESET}";
+         echo -e "${BOLD}${GREEN}     #### Nuclei scanner is ended ✅️✅️✅️✅️${RESET}";
          sleep 30
          printf "\n";
       }
