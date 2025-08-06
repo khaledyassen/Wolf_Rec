@@ -162,6 +162,7 @@ echo -e "${RESET}"
          export CENSYS_API_SECRET=user_input_CENSYS_API_secret;
          export FOFA_EMAIL=user_input_FOFA_EMAIL;
          export FOFA_KEY=user_input_FOFA_KEY;
+         # Change the configuration file in /home/$USER/.config/uncover/provider-config.yaml, then add all in -e 
          cat scope.txt | uncover -e shodan,censys,fofa | grep -E -o "([0-9]{1,3}[\\.]){3}[0-9]{1,3}" | anew output/Domains.txt; 
          echo -e "${BOLD}${RED}-------------------------------------------------------> Using Nmap scanner for scanning open ports 🔍️🔍️🔍️ ${RESET}";
          printf "\n";
