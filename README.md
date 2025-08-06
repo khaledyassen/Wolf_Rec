@@ -33,15 +33,13 @@ sudo chmod +x *.sh
 
 ##### 8] Scanning for known CVEs using jaeles.
 
-##### 9] Vulnerability scanner using Zaproxy by `ZapScan.sh` file.
+##### 9] LFI, SQLI, XSS, SSRF, SSTI, CRLF, Smuggler, header, and command injection using  known tools in `Injector.sh` file.  
 
-##### 10] LFI, SQLI, XSS, SSRF, SSTI, CRLF, Smuggler, header, and command injection using  known tools in `Injector.sh` file.  
-
-##### 11] Save All results in the output directory.
+##### 10] Save all results in the output directory.
 
 # How to use it 🐺️
 
-#### Add the domains of your target in `scope.txt` file whatever the number of domains and run the tool 🐺️
+#### Add the domains of your target in `scope.txt` file, whatever the number of domains, and run the tool 🐺️
 ```
 ./Wolf_Rec.sh
 ```
@@ -49,9 +47,4 @@ sudo chmod +x *.sh
 #### For parameter injection for different vulnerabilities using the most popular tool run the following file.
 ```
 ./Injector.sh 
-```
-
-#### If you want to use the Zap proxy vulnerability scanner run the following file.
-```
-./ZapScan.sh 
 ```
