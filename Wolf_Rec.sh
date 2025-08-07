@@ -114,11 +114,9 @@ echo -e "${RESET}"
 # Function for the Crawling
       Crawling(){
          echo -e "${BOLD}${RED}-------------------------------------------------------> Start param spider 🔗️💝️:(${RESET}";
-        while read Line; do
-         python3 ParamSpider/paramspider/main.py -d "$Line" -o output_P/"$Line".txt
-         done < output/Domains.txt
+         python3 ParamSpider/paramspider/main.py -l output/Domains.txt;
          echo -e "${UNDERLINE}${BOLD}${BLUE}"
-         cat output_P/*.txt | anew output/parameters.txt;
+         cat results/*.txt | anew output/parameters.txt;
          cat output/parameters.txt | anew output/Endpoints.txt;
          echo -e "${RESET}"
          echo -e "${BOLD}${BLUE}     #### param spider is ended ✅️✅️✅️✅️${RESET}";
