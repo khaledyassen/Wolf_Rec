@@ -52,7 +52,7 @@ fi
 if [ -f "Smuggler.txt" ]; then
     # Smuggler injection
     cd smuggler
-    cat ../Smuggler.txt | python3 smuggler.py | anew output/Smuggler_Response.txt
+    cat ../Smuggler.txt | python3 smuggler.py | anew ../output/Smuggler_Response.txt
     cd ../
     sleep 5
 fi
