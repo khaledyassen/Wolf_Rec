@@ -33,7 +33,7 @@ fi
 # Check SSRF.txt file
 if [ -f "SSRF.txt" ]; then
     # SSRF
-    cat SSRF.txt | qsreplace FUZZ | while read url; do
+    cat SSRF.txt | qsreplace Collaborator | while read url; do
         ffuf -u $url -c -v -t 25 -p 0.3 -w SSRF_Fuzz.txt -mc all -fs 0 >> output/Open_Redirect_Response.txt;
         done
     sleep 5
@@ -43,7 +43,7 @@ fi
 if [ -f "SSTI.txt" ]; then
     # SSTI injection
     cd tplmap
-    cat ../SSTI.txt | while read url; do python3 tplmap.py -u $url | anew ../output/SSTI_Inject_Response.txt; done
+    cat ../SSTI.txt | while read url; do python3 tplmap.py -u $url >> ../output/SSTI_Inject_Response.txt; done
     cd ../
     sleep 5
 fi
@@ -60,7 +60,7 @@ fi
 # Check SQL.txt file
 if [ -f "SQL.txt" ]; then
     # SQL injection
-    sqlmap -m SQL.txt --level 3 --batch --dbs --random-agent | anew output/SQL_Inject_Response.txt;
+    sqlmap -m SQL.txt --level 2 --risk 1 --timeout=10 --retries=1 --threads=10 --batch --dbs --random-agent | anew output/SQL_Inject_Response.txt;
     sleep 5
 fi
 
