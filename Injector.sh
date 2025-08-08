@@ -10,7 +10,7 @@ if [ -f "httpx.txt" ]; then
     # head injection for 403&401
     cat httpx.txt | grep "403" | cut -d " " -f1 | anew 403.txt
     cat httpx.txt | grep "401" | cut -d " " -f1 | anew 403.txt
-    cat 403.txt | while read url; do headi -u $url -p IPs.txt | anew output/403_Response.txt ; done
+    cat 403.txt | while read url; do headi -u $url -p IPs.txt >> output/403_Response.txt ; done
     sleep 5
 fi
 
@@ -52,7 +52,7 @@ fi
 if [ -f "Smuggler.txt" ]; then
     # Smuggler injection
     cd smuggler
-    cat ../Smuggler.txt | python3 smuggler.py | anew ../output/Smuggler_Response.txt
+    cat ../Smuggler.txt | python3 smuggler.py >> ../output/Smuggler_Response.txt
     cd ../
     sleep 5
 fi
@@ -60,7 +60,7 @@ fi
 # Check SQL.txt file
 if [ -f "SQL.txt" ]; then
     # SQL injection
-    sqlmap -m SQL.txt --level 2 --risk 1 --timeout=10 --retries=1 --threads=10 --batch --dbs --random-agent | anew output/SQL_Inject_Response.txt;
+    sqlmap -m SQL.txt --level 2 --risk 1 --batch --dbs --random-agent >> output/SQL_Inject_Response.txt;
     sleep 5
 fi
 
@@ -68,7 +68,7 @@ fi
 if [ -f "OS_Commands.txt" ]; then
     # OS command injection
     cd commix
-    cat ../OS_Commands.txt | while read url; do python3 commix.py -u $url --os-cmd "id" --batch --random-agent | anew ../output/Command_Inject_Response.txt; done
+    cat ../OS_Commands.txt | while read url; do python3 commix.py -u $url --os-cmd "id" --batch --random-agent >> ../output/Command_Inject_Response.txt; done
     cd ../
 fi
 
