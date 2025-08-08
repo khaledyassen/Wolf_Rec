@@ -25,8 +25,7 @@ fi
 if [ -f "LFI.txt" ]; then
     # LFI injection
     cat LFI.txt | qsreplace FUZZ | while read url; do
-        ffuf -u $url -c -v -t 25 -p 0.3 -mr "root:x" -w LFI_fuzz.txt >> output/LFI_Inject_Response.txt;
-    done
+        ffuf -u $url -c -v -t 25 -p 0.3 -mr "root:x" -w LFI_fuzz.txt; done >> output/LFI_Inject_Response.txt;
     sleep 5
 fi
 
@@ -34,8 +33,7 @@ fi
 if [ -f "SSRF.txt" ]; then
     # SSRF Add Collaboratot to th SSRF Fuzz file
     cat SSRF.txt | qsreplace FUZZ | while read url; do
-        ffuf -u $url -c -v -t 25 -p 0.3 -w SSRF_Fuzz.txt -mc all -fs 0 >> output/Open_Redirect_Response.txt;
-        done
+        ffuf -u $url -c -v -t 25 -p 0.3 -w SSRF_Fuzz.txt -mc all -fs 0; done  >> output/Open_Redirect_Response.txt;
     sleep 5
 fi
 
