@@ -32,8 +32,8 @@ fi
 
 # Check SSRF.txt file
 if [ -f "SSRF.txt" ]; then
-    # SSRF
-    cat SSRF.txt | qsreplace Collaborator | while read url; do
+    # SSRF Add Collaboratot to th SSRF Fuzz file
+    cat SSRF.txt | qsreplace FUZZ | while read url; do
         ffuf -u $url -c -v -t 25 -p 0.3 -w SSRF_Fuzz.txt -mc all -fs 0 >> output/Open_Redirect_Response.txt;
         done
     sleep 5
