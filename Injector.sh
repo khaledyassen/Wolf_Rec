@@ -84,7 +84,7 @@ echo -e "-------------------------------------------------------> SQLmap tool Fo
 printf "\n";
 if [ -f "SQL.txt" ]; then
     # SQL injection
-    ghauri -m SQL.txt --batch --level=3 --batch -b --random-agent >> output/SQL_Inject_Response.txt;
+    ghauri -m SQL.txt --batch --level=3 -b --random-agent >> output/SQL_Inject_Response.txt;
     sleep 5
 fi
 printf "\n";
