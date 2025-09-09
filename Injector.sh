@@ -59,7 +59,17 @@ printf "\n";
 if [ -f "SSTI.txt" ]; then
     # SSTI injection
     cd tplmap
-    cat ../SSTI.txt | while read url; do python3 tplmap.py -u $url >> ../output/SSTI_Inject_Response.txt; done
+    while read -r url; do
+    echo "Processing: $url"
+    {
+        echo "========================================"
+        echo "Started on: $url"
+        echo "========================================"
+        python3 tplmap.py -u "$url"
+        echo ""
+        echo ""
+    } >> ../output/SSTI_Inject_Response.txt 2>&1
+    done < ../SSTI.txt
     cd ../
     sleep 5
 fi
