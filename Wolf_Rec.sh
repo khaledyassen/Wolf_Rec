@@ -90,7 +90,7 @@ echo -e "${RESET}"
          echo -e "${BOLD}${BLUE}-------------------------------------------------------> Scan for subdomainTakeover using subzy 💝️💝️:(${RESET}";
          printf "\n";
          cat output/httpx.txt | grep "404" | cut -d " " -f1 | anew output/404.txt;
-         subzy run --targets output/404.txt | anew output/takeover.txt;
+         subzy run --targets output/404.txt --concurrency 100 --hide_fails --verify_ssl | anew output/takeover.txt;
          printf "\n";
          echo -e "${BOLD}${GREEN}     #### Httpx and subdomain TakeOver Ended ✅️✅️✅️✅️${RESET}";
          printf "\n";
